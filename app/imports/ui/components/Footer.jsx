@@ -7,21 +7,20 @@ class Footer extends React.Component {
     const footerBackground = {
       backgroundColor: '#000000',
       marginTop: '15px',
-    }
+    };
     const contactStyle = {
       color: '#ffffff',
-    }
+    };
     return (
         <footer style={footerBackground}>
-          <Grid textAlign="center" verticalAlign="middle" centered>
+          <Grid container textAlign="center" verticalAlign="middle" centered>
             <Grid.Row>
-
-              <div style={contactStyle} >
+              <Grid.Column textAlign='center' style={contactStyle} centered>
                 Contact Us
                 <hr/>
                 Phone : (808) 956-8111 <br/>
                 Email : manoaweb@hawaii.edu
-              </div>
+              </Grid.Column>
             </Grid.Row>
             <Grid.Row centered>
               <a href="https://www.facebook.com/uhmanoa/">
