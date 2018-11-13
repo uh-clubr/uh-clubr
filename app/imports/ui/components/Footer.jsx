@@ -7,10 +7,10 @@ class Footer extends React.Component {
     const footerBackground = {
       backgroundColor: '#000000',
       marginTop: '15px',
-    }
+    };
     const contactStyle = {
       color: '#ffffff',
-    }
+    };
     return (
         <footer style={footerBackground}>
           <Grid textAlign="center" verticalAlign="middle" centered>
