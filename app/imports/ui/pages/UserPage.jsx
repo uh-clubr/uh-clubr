@@ -25,6 +25,11 @@ class UserPage extends React.Component {
             </Segment>
             <Segment>
               Interests:
+              <List bulleted>
+                <List.Item>Tags</List.Item>
+                <List.Item>or</List.Item>
+                <List.Item>interests</List.Item>
+              </List>
             </Segment>
           </Segment.Group>
           <Table celled>
