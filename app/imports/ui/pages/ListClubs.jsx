@@ -51,7 +51,8 @@ class ListClubs extends React.Component {
         <Container>
           <Header as="h2" textAlign="center">Club List</Header>
           <Card.Group centered>
-            {this.clubs.map((club, index) => <Club key={index} club={club}/>)}
+            {/* this.clubs.map((club, index) => <Club key={index} club={club}/>) */}
+            {this.clubs.filter(club => club.type === 'Student Affairs').map((club, index) => <Club key={index} club={club}/>)}
           </Card.Group>
         </Container>
     );
