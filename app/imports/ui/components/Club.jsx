@@ -17,23 +17,23 @@ class Club extends React.Component {
             </Card.Description>
           </Card.Content>
           <Card.Content extra>
-            <a href={this.props.club.riowebsite}>
+            <a href={this.props.club.rio_website}>
               <Icon name='desktop' />
             </a>
-            <a href={this.props.club.rioemail}>
+            <a href={this.props.club.rio_email}>
             <Icon name='envelope outline' />
           </a>
-            <a href={this.props.club.contactemail}>
+            <a href={this.props.club.contact_email}>
               <Icon name='address card outline' />
               {this.props.club.contactperson}
             </a>
-            <a href={this.props.club.riofacebook}>
+            <a href={this.props.club.rio_facebook}>
               <Icon name='facebook f' />
             </a>
-            <a href={this.props.club.rioinstagram}>
+            <a href={this.props.club.rio_instagram}>
               <Icon name='instagram' />
             </a>
-            <a href={this.props.club.riotwitter}>
+            <a href={this.props.club.rio_twitter}>
               <Icon name='twitter' />
             </a>
           </Card.Content>
