@@ -41,9 +41,9 @@ class NavBar extends React.Component {
           ) : ''}
           {/* Checks if user is logged in to display user options */}
           {this.props.currentUser ? (
-              [<Menu.Item style={rightItem} as={NavLink} position="right" activeClassName="active" exact to="/list" 
+              [<Menu.Item as={NavLink} position="right" activeClassName="active" exact to="/list"
                  key='list'>List Clubs</Menu.Item>,
-              <Menu.Item style={rightItem} as={NavLink} position="right" activeClassName="active" exact to="/clubadminlist"
+              <Menu.Item as={NavLink} activeClassName="active" exact to="/clubadminlist"
                          key='clubadminlist'>List My Clubs</Menu.Item>]
           ) : ''}
           {/* Sign in if not signed in */}
