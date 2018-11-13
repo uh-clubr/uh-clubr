@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Container, Table, Header, Loader } from 'semantic-ui-react';
+import { Container, Table, Header, Loader, Image, List, Segment } from 'semantic-ui-react';
 import { Stuffs } from '/imports/api/stuff/stuff';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
@@ -18,19 +18,46 @@ class UserPage extends React.Component {
     return (
         <Container>
           <Header as="h2" textAlign="center">Profile</Header>
+          <Image size='small' circular src="/images/meteor-logo.png"/>
+          <Segment.Group horizontal>
+            <Segment>
+              About:
+            </Segment>
+            <Segment>
+              Interests:
+            </Segment>
+          </Segment.Group>
           <Table celled>
             <Table.Header>
               <Table.Row>
                 <Table.HeaderCell>Club</Table.HeaderCell>
                 <Table.HeaderCell>Description</Table.HeaderCell>
                 <Table.HeaderCell>Size</Table.HeaderCell>
-                <Table.HeaderCell>Contact</Table.HeaderCell>
+                <Table.HeaderCell>Tags</Table.HeaderCell>
+                <Table.HeaderCell>Leave</Table.HeaderCell>
               </Table.Row>
             </Table.Header>
             <Table.Body>
-              {this.props.stuffs.map((stuff) => <StuffItem key={stuff._id} stuff={stuff} />)}
+              <Table.Row>
+                <Table.Cell>
+                  <Image size='small' circular src="/images/meteor-logo.png"/>
+                  Club
+                </Table.Cell>
+                <Table.Cell>Description</Table.Cell>
+                <Table.Cell>Size</Table.Cell>
+                <Table.Cell>
+                  <List bulleted>
+                    <List.Item>Tags</List.Item>
+                    <List.Item>or</List.Item>
+                    <List.Item>interests</List.Item>
+                  </List>
+                </Table.Cell>
+                <Table.Cell selectable><a href='#'>Leave Club</a></Table.Cell>
+              </Table.Row>
             </Table.Body>
+            <Table.Footer/>
           </Table>
+
         </Container>
     );
   }
