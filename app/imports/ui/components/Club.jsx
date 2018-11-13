@@ -9,7 +9,7 @@ class Club extends React.Component {
     return (
         <Card>
           <Card.Content>
-            <Image floated='right' size='mini' src={this.props.club.image} />
+            <Image floated='left' src={this.props.club.image} />
             <Card.Header> {this.props.club.name}</Card.Header>
             <Card.Meta> {this.props.club.type} </Card.Meta>
             <Card.Description>

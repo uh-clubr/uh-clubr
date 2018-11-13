@@ -21,7 +21,7 @@ class ListClubs extends React.Component {
       riofacebook: '',
       rioinstagram: '',
       riotwitter: '',
-      image: '',
+      image: 'http://www.ics.hawaii.edu/wp-content/uploads/2013/08/small-greyhats-teamSpr2011.jpg',
 // eslint-disable-next-line max-len
       description: 'The Grey Hats is a student-led, extracurricular organization focused on real-world training for cyber defense. Membership gives students an outstanding opportunity to learn and apply critical skills, attack and defend systems, and to network with others interested in modern security issues.',
     },
@@ -35,8 +35,8 @@ class ListClubs extends React.Component {
       riofacebook: 'https://www.facebook.com/travel2change',
       rioinstagram: 'https://www.instagram.com/travel2change/',
       riotwitter: '',
-      image: '',
-      description: '',
+      image: 'http://travel2change.org/wp-content/uploads/2017/11/change.png',
+      description: 'We all love to travel. But let’s face it—travel can create social and environmental problems. At travel2change we believe that by exploring the world, we can better it. Discover fun and impactful activities offered by local communities. Together we can transform tourism so that local communities benefit.  travel2change is a Hawaii based 501(c)(3) nonprofit organization.',
     },
   ];
 
@@ -51,8 +51,8 @@ class ListClubs extends React.Component {
         <Container>
           <Header as="h2" textAlign="center">Club List</Header>
           <Card.Group centered>
-            {/* this.clubs.map((club, index) => <Club key={index} club={club}/>) */}
-            {this.clubs.filter(club => club.type === 'Student Affairs').map((club, index) => <Club key={index} club={club}/>)}
+            {this.clubs.map((club, index) => <Club key={index} club={club}/>)}
+            {/* this.clubs.filter(club => club.type === 'Student Affairs').map((club, index) => <Club key={index} club={club}/>) */}
           </Card.Group>
         </Container>
     );
