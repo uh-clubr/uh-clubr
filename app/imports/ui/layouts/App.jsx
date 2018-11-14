@@ -8,6 +8,9 @@ import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import Landing from '../pages/Landing';
 import ListClubs from '../pages/ListClubs';
+import ListStuffAdmin from '../pages/ListStuffAdmin';
+import UserPage from '../pages/UserPage';
+import EditStuff from '../pages/EditStuff';
 import AddClub from '../pages/AddClub';
 import EditClub from '../pages/EditClub';
 import NotFound from '../pages/NotFound';
@@ -28,7 +31,10 @@ class App extends React.Component {
               <Route exact path="/" component={Landing}/>
               <Route path="/signin" component={Signin}/>
               <Route path="/signup" component={Signup}/>
+              <ProtectedRoute path="/User" component={UserPage}/>
               <ProtectedRoute path="/list" component={ListClubs}/>
+              <ProtectedRoute path="/edit/:_id" component={EditStuff}/>
+              <AdminProtectedRoute path="/admin" component={ListStuffAdmin}/>
               <ProtectedRoute path="/clubadminlist" component={ListClubAdmin}/>
               <AdminProtectedRoute path="/add" component={AddClub}/>
               <ProtectedRoute path="/edit/:_id" component={EditClub}/>
