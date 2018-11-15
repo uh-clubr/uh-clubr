@@ -6,7 +6,7 @@ class Footer extends React.Component {
   render() {
     const footerBackground = {
       backgroundColor: '#000000',
-      marginTop: '15px',
+      marginTop: '14px',
     };
     const contactStyle = {
       color: '#ffffff',
