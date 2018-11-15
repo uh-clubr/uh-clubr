@@ -1,11 +1,11 @@
 /* eslint-disable max-len */
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Meteor} from 'meteor/meteor';
-import {withTracker} from 'meteor/react-meteor-data';
-import {withRouter, NavLink} from 'react-router-dom';
-import {Menu, Dropdown, Header} from 'semantic-ui-react';
-import {Roles} from 'meteor/alanning:roles';
+import { Meteor } from 'meteor/meteor';
+import { withTracker } from 'meteor/react-meteor-data';
+import { withRouter, NavLink } from 'react-router-dom';
+import { Menu, Dropdown, Image } from 'semantic-ui-react';
+import { Roles } from 'meteor/alanning:roles';
 
 /** The NavBar appears at the top of every page. Rendered by the App Layout component. */
 class NavBar extends React.Component {
@@ -13,30 +13,31 @@ class NavBar extends React.Component {
         const menuStyle = {
             marginBottom: '0px',
             backgroundColor: 'black',
-            padding: '0px',
+            paddingBottom: '10px',
             fontSize: '20px',
             fontFamily: 'Helvetica',
             marginLeft: '0px',
+            boxShadow: 'none',
         };
         const itemStyle = {
-            padding: '5px',
+            padding: '3px',
             margin: '10px',
-        };
-        const logoStyle = {
-            marginRight: '30px',
         };
         const iconMargin = {
             margin: '2px',
         };
+        const menuItemStyle = {
+            padding: '10px',
+        };
 
         return (
             <Menu style={menuStyle} attached="top" borderless inverted>
-                <Menu.Item style={logoStyle} as={NavLink} activeClassName="" exact to="/">
-                    <Header inverted as='h1'>LOGO HERE</Header>
+                <Menu.Item style={menuItemStyle} as={NavLink} activeClassName="" exact to="/">
+                    <Image src='/images/NavLogo.PNG' size='tiny' />
                 </Menu.Item>
                 {/* Checks if user is admin, if not keeps user menu */}
                 {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
-                    [<Menu.Item as={NavLink} activeClassName="active" exact to="/add" key='add'>Add Club</Menu.Item>,
+                    [<Menu.Item style={menuItemStyle} as={NavLink} activeClassName="active" exact to="/add" key='add'>Add Club</Menu.Item>,
                         <Menu.Item as={NavLink} activeClassName="active" exact to="/admin"
                                    key='admin'>Admin</Menu.Item>]
                 ) : ''}
@@ -72,6 +73,7 @@ class NavBar extends React.Component {
 /** Declare the types of all properties. */
 NavBar.propTypes = {
     currentUser: PropTypes.string,
+
 };
 
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
