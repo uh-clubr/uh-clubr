@@ -15,7 +15,7 @@ class Footer extends React.Component {
         <footer style={footerBackground}>
           <Grid container textAlign="center" verticalAlign="middle" centered>
             <Grid.Row>
-              <Grid.Column textAlign='center' style={contactStyle} centered>
+              <Grid.Column textAlign='center' style={contactStyle} >
                 Contact Us
                 <hr/>
                 Phone : (808) 956-8111 <br/>
