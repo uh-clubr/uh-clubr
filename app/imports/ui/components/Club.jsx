@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Image, Icon } from 'semantic-ui-react';
+import { Card, Image, Icon, Container, Header } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 
@@ -7,14 +7,17 @@ import { withRouter } from 'react-router-dom';
 class Club extends React.Component {
   render() {
     return (
-        <Card>
-          <Card.Content>
-            <Image floated='left' src={this.props.club.image} />
-            <Card.Header> {this.props.club.name}</Card.Header>
-            <Card.Meta> {this.props.club.type} </Card.Meta>
-            <Card.Description>
-              {this.props.club.description}
-            </Card.Description>
+      <Card fluid>
+          <Card.Content floated='left'>
+            <Image floated='left' rounded size='medium' src={this.props.club.image} />
+            <Container>
+              <Header
+                  as='h2'
+                  content={this.props.club.name}
+                  subheader={this.props.club.type}
+              />
+            </Container>
+            <Card.Description>{this.props.club.description}</Card.Description>
           </Card.Content>
           <Card.Content extra>
             <a href={this.props.club.rio_website}>
@@ -25,7 +28,7 @@ class Club extends React.Component {
           </a>
             <a href={this.props.club.contact_email}>
               <Icon name='address card outline' />
-              {this.props.club.contactperson}
+              {this.props.club.contact_person}
             </a>
             <a href={this.props.club.rio_facebook}>
               <Icon name='facebook f' />
