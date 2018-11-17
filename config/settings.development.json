@@ -8,6 +8,11 @@
     {
       "email": "john@foo.com",
       "password": "changeme"
+    },
+    {
+      "email": "clubadmin@foo.com",
+      "password": "changeme",
+      "role": "clubAdmin"
     }
   ],
   "defaultData": [
