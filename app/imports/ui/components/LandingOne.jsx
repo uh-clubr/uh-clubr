@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 import React from 'react';
-import {Grid, Header, Image, Icon} from 'semantic-ui-react';
+import {Grid, Header, Image, Icon, Segment} from 'semantic-ui-react';
 import {withRouter} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import {withTracker} from 'meteor/react-meteor-data';
@@ -48,15 +48,15 @@ class LandingOne extends React.Component {
                         </Grid.Column>
                         <Grid.Column>
                             {this.props.currentUser ? (
-                                <Header >
+                                <Header>
                                     IF USER IS SIGNED IN
                                     What content to put here?
                                 </Header>
-                            ) : <Header style={headerStyle}>
-                                <Icon fitted inverted name='user circle outline'/>
+                            ) : <Segment><Header>
+                                <Icon fitted name='user circle outline'/>
                                 SIGN UP!
-                                <Header.Subheader style={headerStyle}>Join now and find to right club meant for you!</Header.Subheader>
-                            </Header>}
+                                <Header.Subheader>Join now and find to right club meant for you!</Header.Subheader>
+                            </Header></Segment>}
                         </Grid.Column>
                     </Grid.Row>
                     <Grid.Row>
@@ -73,20 +73,20 @@ class LandingOne extends React.Component {
                     </Grid.Row>
                 </Grid>
             </div>
-    );
+        );
     }
-    }
+}
 
-        /** Declare the types of all properties. */
-    LandingOne.propTypes = {
-        currentUser: PropTypes.string,
+/** Declare the types of all properties. */
+LandingOne.propTypes = {
+    currentUser: PropTypes.string,
 
-    };
+};
 
-        /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
-    const LandingOneContainer = withTracker(() => ({
-        currentUser: Meteor.user() ? Meteor.user().username : '',
-    }))(LandingOne);
+/** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
+const LandingOneContainer = withTracker(() => ({
+    currentUser: Meteor.user() ? Meteor.user().username : '',
+}))(LandingOne);
 
-        /** Enable ReactRouter for this component. https://reacttraining.com/react-router/web/api/withRouter */
-    export default withRouter(LandingOneContainer);
+/** Enable ReactRouter for this component. https://reacttraining.com/react-router/web/api/withRouter */
+export default withRouter(LandingOneContainer);
