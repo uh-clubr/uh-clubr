@@ -16,54 +16,55 @@ class UserPage extends React.Component {
   /** Render the page once subscriptions have been received. */
   renderPage() {
     return (
-        <Container>
-          <Header as="h2" textAlign="center">Profile</Header>
-          <Image size='small' circular src="/images/meteor-logo.png"/>
-          <Segment.Group horizontal>
-            <Segment>
-              About:
-            </Segment>
-            <Segment>
-              Interests:
-              <List bulleted>
-                <List.Item>Tags</List.Item>
-                <List.Item>or</List.Item>
-                <List.Item>interests</List.Item>
-              </List>
-            </Segment>
-          </Segment.Group>
-          <Table celled>
-            <Table.Header>
-              <Table.Row>
-                <Table.HeaderCell>Club</Table.HeaderCell>
-                <Table.HeaderCell>Description</Table.HeaderCell>
-                <Table.HeaderCell>Size</Table.HeaderCell>
-                <Table.HeaderCell>Tags</Table.HeaderCell>
-                <Table.HeaderCell>Leave</Table.HeaderCell>
-              </Table.Row>
-            </Table.Header>
-            <Table.Body>
-              <Table.Row>
-                <Table.Cell>
-                  <Image size='small' circular src="/images/meteor-logo.png"/>
-                  Club
-                </Table.Cell>
-                <Table.Cell>Description</Table.Cell>
-                <Table.Cell>Size</Table.Cell>
-                <Table.Cell>
-                  <List bulleted>
-                    <List.Item>Tags</List.Item>
-                    <List.Item>or</List.Item>
-                    <List.Item>interests</List.Item>
-                  </List>
-                </Table.Cell>
-                <Table.Cell selectable><a href='#'>Leave Club</a></Table.Cell>
-              </Table.Row>
-            </Table.Body>
-            <Table.Footer/>
-          </Table>
-
-        </Container>
+        <div className='user'>
+          <Container>
+            <Header as="h2" textAlign="center">Profile</Header>
+            <Image size='small' circular src="/images/meteor-logo.png"/>
+            <Segment.Group horizontal>
+              <Segment>
+                About:
+              </Segment>
+              <Segment>
+                Interests:
+                <List bulleted>
+                  <List.Item>Tags</List.Item>
+                  <List.Item>or</List.Item>
+                  <List.Item>interests</List.Item>
+                </List>
+              </Segment>
+            </Segment.Group>
+            <Table celled>
+              <Table.Header>
+                <Table.Row>
+                  <Table.HeaderCell>Club</Table.HeaderCell>
+                  <Table.HeaderCell>Description</Table.HeaderCell>
+                  <Table.HeaderCell>Size</Table.HeaderCell>
+                  <Table.HeaderCell>Tags</Table.HeaderCell>
+                  <Table.HeaderCell>Leave</Table.HeaderCell>
+                </Table.Row>
+              </Table.Header>
+              <Table.Body>
+                <Table.Row>
+                  <Table.Cell>
+                    <Image size='small' circular src="/images/meteor-logo.png"/>
+                    Club
+                  </Table.Cell>
+                  <Table.Cell>Description</Table.Cell>
+                  <Table.Cell>Size</Table.Cell>
+                  <Table.Cell>
+                    <List bulleted>
+                      <List.Item>Tags</List.Item>
+                      <List.Item>or</List.Item>
+                      <List.Item>interests</List.Item>
+                    </List>
+                  </Table.Cell>
+                  <Table.Cell selectable><a href='#'>Leave Club</a></Table.Cell>
+                </Table.Row>
+              </Table.Body>
+              <Table.Footer/>
+            </Table>
+          </Container>
+        </div>
     );
   }
 }

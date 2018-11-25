@@ -1,13 +1,43 @@
 .content {
-    font-size: 20px;
-    font-weight: bold;
-    color: #FFFFFF;
-}
-
-.nav {
+  font-size: 20px;
+  font-weight: bold;
+  color: #FFFFFF;
 
 }
 
-.footer {
+.nav-menu-style {
+  margin-bottom: 0px;
+  background-color: black;
+  padding-bottom: 10px;
+  font-size: 20px;
+  font-family: Helvetica;
+  margin-left: 0px;
+  box-shadow: none;
+}
 
+.nav-item-style {
+  padding: 3px;
+  margin: 10px;
+}
+
+.nav-icon-margin {
+  margin: 2px;
+}
+
+.nav-menu-item-style {
+  padding: 10px;
+}
+
+.footer-background {
+  background-color: #000000;
+  margin-top: 14px;
+}
+
+.footer-contact-style {
+  color: #FFFFFF;
+}
+
+.user {
+  font-size: 20px;
+  font-family: Helvetica;
 }
