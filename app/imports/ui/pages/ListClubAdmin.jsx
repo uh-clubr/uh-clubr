@@ -1,10 +1,10 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
 import { Container, Card, Header, Loader } from 'semantic-ui-react';
-import { Stuffs } from '/imports/api/stuff/stuff';
+import { Clubs } from '/imports/api/club/club';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import ClubAdmin from '/imports/ui/components/ClubAdmin';
 
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 class ListClubAdmin extends React.Component {
@@ -18,19 +18,10 @@ class ListClubAdmin extends React.Component {
   renderPage() {
     return (
         <Container>
-          <Header as="h2" textAlign="center">List My Clubs</Header>
-          <Card centered>
-            <Card.Content>
-              <Card.Header>ACM Manoa</Card.Header>
-              <Card.Meta>Association for Computing Machinery</Card.Meta>
-              <Card.Description>
-                We are ACM Manoa.
-              </Card.Description>
-            </Card.Content>
-            <Card.Content extra>
-              <Link to={'/edit'}>Edit</Link>
-            </Card.Content>
-          </Card>
+          <Header as="h2" textAlign="center">Club List</Header>
+          <Card.Group centered>
+            {this.props.clubs.map((club, index) => <ClubAdmin key={index} club={club}/>)}
+          </Card.Group>
         </Container>
     );
   }
@@ -38,16 +29,16 @@ class ListClubAdmin extends React.Component {
 
 /** Require an array of Stuff documents in the props. */
 ListClubAdmin.propTypes = {
-  stuffs: PropTypes.array.isRequired,
+  clubs: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
 };
 
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
 export default withTracker(() => {
   // Get access to Stuff documents.
-  const subscription = Meteor.subscribe('StuffAdmin');
+  const subscription = Meteor.subscribe('ClubsAdmin');
   return {
-    stuffs: Stuffs.find({}).fetch(),
+    clubs: Clubs.find({}).fetch(),
     ready: subscription.ready(),
   };
 })(ListClubAdmin);
