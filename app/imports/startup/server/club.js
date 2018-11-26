@@ -25,8 +25,16 @@ Meteor.publish('Clubs', function publish() {
   return this.ready();
 });
 
-/** This subscription publishes all documents regardless of user, but only if the logged in user is the Admin. */
+/** This subscription publishes all documents regardless of user, but only if the logged in user is the ClubAdmin. */
 Meteor.publish('ClubAdmin', function publish() {
+  if (this.userId && Roles.userIsInRole(this.userId, 'ClubAdmin')) {
+    return Clubs.find();
+  }
+  return this.ready();
+});
+
+/** This subscription publishes all documents regardless of user, but only if the logged in user is the MasterAdmin. */
+Meteor.publish('MasterAdmin', function publish() {
   if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
     return Clubs.find();
   }

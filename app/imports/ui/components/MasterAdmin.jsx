@@ -62,7 +62,7 @@ class Club extends React.Component {
           </Card.Content>
           <Card.Content extra>
             <Link to={`/edit/${this.props.club._id}`}>Edit</Link>
-            <Button basic onClick={this.onClick}>Delete</Button>
+            <Button basic color='red' floated='right' onClick={this.onClick}>Delete</Button>
           </Card.Content>
         </Card>
     );

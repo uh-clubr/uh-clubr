@@ -36,7 +36,7 @@ ListClubAdmin.propTypes = {
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
 export default withTracker(() => {
   // Get access to Stuff documents.
-  const subscription = Meteor.subscribe('ClubsAdmin');
+  const subscription = Meteor.subscribe('ClubAdmin');
   return {
     clubs: Clubs.find({}).fetch(),
     ready: subscription.ready(),
