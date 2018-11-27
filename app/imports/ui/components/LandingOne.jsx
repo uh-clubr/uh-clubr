@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 import React from 'react';
-import {Grid, Header, Image, Icon, Segment} from 'semantic-ui-react';
+import {Grid, Header, Image, Icon, Segment, Form} from 'semantic-ui-react';
 import {withRouter} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import {withTracker} from 'meteor/react-meteor-data';
@@ -47,16 +47,38 @@ class LandingOne extends React.Component {
                             </Header>
                         </Grid.Column>
                         <Grid.Column>
-                            {this.props.currentUser ? (
-                                <Header>
-                                    IF USER IS SIGNED IN
-                                    What content to put here?
-                                </Header>
-                            ) : <Segment><Header>
-                                <Icon fitted name='user circle outline'/>
-                                SIGN UP!
-                                <Header.Subheader>Join now and find to right club meant for you!</Header.Subheader>
-                            </Header></Segment>}
+                            {this.props.currentUser ? '' :
+                                <Segment>
+                                    <Header>
+                                        <Icon fitted name='user circle outline'/>
+                                        SIGN UP!
+                                        <Header.Subheader>Join now and find to right club meant for
+                                            you!</Header.Subheader>
+                                    </Header>
+                                    <Form onSubmit={this.handleSubmit}>
+                                        <Segment stacked>
+                                            <Form.Input
+                                                label="Email"
+                                                icon="user"
+                                                iconPosition="left"
+                                                name="email"
+                                                type="email"
+                                                placeholder="E-mail address"
+                                                onChange={this.handleChange}
+                                            />
+                                            <Form.Input
+                                                label="Password"
+                                                icon="lock"
+                                                iconPosition="left"
+                                                name="password"
+                                                placeholder="Password"
+                                                type="password"
+                                                onChange={this.handleChange}
+                                            />
+                                            <Form.Button content="Submit"/>
+                                        </Segment>
+                                    </Form>
+                                </Segment>}
                         </Grid.Column>
                     </Grid.Row>
                     <Grid.Row>
