@@ -55,14 +55,19 @@ class LandingOne extends React.Component {
             margin: '0px',
         };
         return (
-            <div style={landingbg}>
-                <Grid style={gridStyle} columns='equal' className='landingone-background' container centered>
+            <div className='landing-background'>
+              <div className='landing-grid-style'>
+                <Grid columns='equal' className='landingone-background' container centered>
                     <Grid.Row textAlign='center'>
-                        <Image style={logoStyle} src='/images/LandingLogo.PNG'/>
+                      <div className='landing-logo-style'>
+                        <Image src='/images/LandingLogo.PNG'/>
+                      </div>
                     </Grid.Row>
                     <Grid.Row>
-                        <Header inverted style={headerStyle}>Welcome to Clubr, where you can search for the club you
+                      <div className='landing-header-style'>
+                        <Header inverted>Welcome to Clubr, where you can search for the club you
                             desire!</Header>
+                      </div>
                     </Grid.Row>
                     <Grid.Row>
                         <Grid.Column>
@@ -124,6 +129,7 @@ class LandingOne extends React.Component {
                     <Grid.Row>
                     </Grid.Row>
                 </Grid>
+              </div>
             </div>
         );
     }
