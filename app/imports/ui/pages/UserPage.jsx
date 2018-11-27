@@ -1,7 +1,7 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Container, Table, Header, Loader, Image, List, Segment } from 'semantic-ui-react';
-import { Clubs } from '../../api/club/club';
+import { Clubs, ClubSchema } from '../../api/club/club';
+import { Container, Table, Header, Loader, Image, List, Segment, Card } from 'semantic-ui-react';
 import { Stuffs } from '/imports/api/stuff/stuff';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
@@ -18,7 +18,7 @@ class UserPage extends React.Component {
   renderPage() {
     return (
         <div className='user'>
-          <Container>
+         <Container>
             <Header as="h2" textAlign="center">Profile</Header>
             <Image size='small' circular src="/images/meteor-logo.png"/>
             <Segment.Group horizontal>
@@ -72,7 +72,7 @@ class UserPage extends React.Component {
 
 /** Require an array of Stuff documents in the props. */
 UserPage.propTypes = {
-  stuffs: PropTypes.array.isRequired,
+  clubs: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
 };
 
@@ -81,7 +81,7 @@ export default withTracker(() => {
   // Get access to Stuff documents.
   const subscription = Meteor.subscribe('Stuff');
   return {
-    stuffs: Stuffs.find({}).fetch(),
+    clubs: Clubs.find({}).fetch(),
     ready: subscription.ready(),
   };
 })(UserPage);
