@@ -58,19 +58,23 @@
 }
 
 .add-club {
-
+  font-family: Helvetica, serif;
 }
 
 .edit-club {
-
+  font-family: Helvetica, serif;
 }
 
 .club-admin {
-
+font-family: Helvetica, serif;
 }
 
 .club-master-admin {
+font-family: Helvetica, serif;
+}
 
+.list-clubs {
+  font-family: Helvetica, serif;
 }
 
 .user {

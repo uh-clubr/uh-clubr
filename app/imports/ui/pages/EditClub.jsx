@@ -31,27 +31,29 @@ class EditClub extends React.Component {
   /** Render the form. Use Uniforms: https://github.com/vazco/uniforms */
   renderPage() {
     return (
-        <Grid container centered>
-          <Grid.Column>
-            <Header as="h2" textAlign="center">Edit Club</Header>
-            <AutoForm schema={ClubSchema} onSubmit={this.submit} model={this.props.doc}>
-              <Segment>
-                <TextField name='contact_person'/>
-                <TextField name='contact_email'/>
-                <TextField name='rio_email'/>
-                <TextField name='rio_website'/>
-                <TextField name='rio_facebook'/>
-                <TextField name='rio_instagram'/>
-                <TextField name='rio_twitter'/>
-                <TextField name='image'/>
-                <LongTextField name='description'/>
-                <SubmitField value='Submit'/>
-                <ErrorsField/>
-                <HiddenField name='owner' />
-              </Segment>
-            </AutoForm>
-          </Grid.Column>
-        </Grid>
+        <div className='edit-club'>
+          <Grid container centered>
+            <Grid.Column>
+              <Header as="h2" textAlign="center">Edit Club</Header>
+              <AutoForm schema={ClubSchema} onSubmit={this.submit} model={this.props.doc}>
+                <Segment>
+                  <TextField name='contact_person'/>
+                  <TextField name='contact_email'/>
+                  <TextField name='rio_email'/>
+                  <TextField name='rio_website'/>
+                  <TextField name='rio_facebook'/>
+                  <TextField name='rio_instagram'/>
+                  <TextField name='rio_twitter'/>
+                  <TextField name='image'/>
+                  <LongTextField name='description'/>
+                  <SubmitField value='Submit'/>
+                  <ErrorsField/>
+                  <HiddenField name='owner' />
+                </Segment>
+              </AutoForm>
+            </Grid.Column>
+          </Grid>
+        </div>
     );
   }
 }

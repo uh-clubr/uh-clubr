@@ -17,12 +17,14 @@ class ListClubAdmin extends React.Component {
   /** Render the page once subscriptions have been received. */
   renderPage() {
     return (
-        <Container>
-          <Header as="h2" textAlign="center">Club List</Header>
-          <Card.Group centered>
-            {this.props.clubs.map((club, index) => <ClubAdmin key={index} club={club}/>)}
-          </Card.Group>
-        </Container>
+        <div className='club-admin'>
+          <Container>
+            <Header as="h2" textAlign="center">Club List</Header>
+            <Card.Group centered>
+              {this.props.clubs.map((club, index) => <ClubAdmin key={index} club={club}/>)}
+            </Card.Group>
+          </Container>
+        </div>
     );
   }
 }
