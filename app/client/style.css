@@ -1,5 +1,92 @@
 .content {
-    font-size: 20px;
-    font-weight: bold;
-    color: #FFFFFF;
+  font-size: 20px;
+  font-weight: bold;
+  color: #FFFFFF;
+
+}
+
+.landing-grid-style {
+  margin-top: 14px;
+}
+
+.landing-background {
+  background: url('/images/bg.png') no-repeat center center fixed;
+  background-size: cover;
+  flex: 1;
+  padding-bottom: 14px;
+}
+
+.landing-header-style {
+  margin-top: 25px;
+  color: white;
+  font-weight: bold;
+}
+
+.landing-logo-style {
+  margin: 0;
+}
+
+.nav-menu-style {
+  margin-bottom: 0;
+  background-color: black;
+  padding-bottom: 10px;
+  font-size: 20px;
+  font-family: Helvetica, serif;
+  margin-left: 0;
+  box-shadow: none;
+}
+
+.nav-item-style {
+  padding: 3px;
+  margin: 10px;
+}
+
+.nav-icon-margin {
+  margin: 2px;
+}
+
+.nav-menu-item-style {
+  padding: 10px;
+}
+
+.footer-background {
+  background-color: #000000;
+  margin-top: 14px;
+}
+
+.footer-contact-style {
+  color: #FFFFFF;
+}
+
+.add-club {
+  font-family: Helvetica, serif;
+}
+
+.edit-club {
+  font-family: Helvetica, serif;
+}
+
+.club-admin {
+  font-family: Helvetica, serif;
+}
+
+.club-master-admin {
+  font-family: Helvetica, serif;
+}
+
+.list-clubs {
+  font-family: Helvetica, serif;
+}
+
+.user {
+  font-family: Helvetica, serif;
+}
+
+.user-image {
+  margin-top: 10px;
+  margin-bottom: 60px;
+}
+
+.user-clubs {
+  margin-bottom: 30px;
 }

@@ -31,6 +31,7 @@ class EditClub extends React.Component {
   /** Render the form. Use Uniforms: https://github.com/vazco/uniforms */
   renderPage() {
     return (
+        <div className='edit-club'>
         <Grid container centered>
           <Grid.Column>
             <Header as="h2" textAlign="center">Edit Club</Header>
@@ -54,6 +55,7 @@ class EditClub extends React.Component {
             </AutoForm>
           </Grid.Column>
         </Grid>
+      </div>
     );
   }
 }
