@@ -1,6 +1,12 @@
 import React from 'react';
-import { Stuffs } from '/imports/api/stuff/stuff';
-import { Grid, Form, Header, Button } from 'semantic-ui-react';
+import { Clubs, ClubSchema } from '/imports/api/club/club';
+import { Grid, Header, Segment } from 'semantic-ui-react';
+import AutoForm from 'uniforms-semantic/AutoForm';
+import TextField from 'uniforms-semantic/TextField';
+import LongTextField from 'uniforms-semantic/LongTextField';
+import SubmitField from 'uniforms-semantic/SubmitField';
+import HiddenField from 'uniforms-semantic/HiddenField';
+import ErrorsField from 'uniforms-semantic/ErrorsField';
 import { Bert } from 'meteor/themeteorchef:bert';
 import { Meteor } from 'meteor/meteor';
 
@@ -29,7 +35,7 @@ class AddClub extends React.Component {
   submit(data) {
     const { name, quantity, condition } = data;
     const owner = Meteor.user().username;
-    Stuffs.insert({ name, quantity, condition, owner }, this.insertCallback);
+    Clubs.insert({ name, quantity, condition, owner }, this.insertCallback);
   }
 
   /** Render the form. Use Uniforms: https://github.com/vazco/uniforms */
@@ -38,21 +44,22 @@ class AddClub extends React.Component {
         <Grid container centered>
           <Grid.Column>
             <Header as="h2" textAlign="center">Add Club</Header>
-            <Form>
-              <Form.Field required>
-                <label>Club Name</label>
-                <input placeholder='Club Name'/>
-              </Form.Field>
-              <Form.Field required>
-                <label>Club Type</label>
-                <input placeholder='Club Type (ex.Academic, Ethical, etc.)'/>
-              </Form.Field>
-              <Form.Field required>
-                <label>Club Officer</label>
-                <input placeholder='Club officer (ex.President, Vice president, etc.)'/>
-              </Form.Field>
-              <Button type='submit'>Submit</Button>
-            </Form>
+            <AutoForm ref={(ref) => { this.formRef = ref; }} schema={ClubSchema} onSubmit={this.submit}>
+              <Segment>
+                <TextField name='contact_person'/>
+                <TextField name='contact_email'/>
+                <TextField name='rio_email'/>
+                <TextField name='rio_website'/>
+                <TextField name='rio_facebook'/>
+                <TextField name='rio_instagram'/>
+                <TextField name='rio_twitter'/>
+                <TextField name='image'/>
+                <LongTextField name='description'/>
+                <SubmitField value='Submit'/>
+                <ErrorsField/>
+                <HiddenField name='owner' value='fakeuser@foo.com'/>
+              </Segment>
+            </AutoForm>
           </Grid.Column>
         </Grid>
     );

@@ -1,10 +1,10 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Container, Header, Loader, Card, Button } from 'semantic-ui-react';
-import { Stuffs } from '/imports/api/stuff/stuff';
+import { Container, Card, Header, Loader } from 'semantic-ui-react';
+import { Clubs } from '/imports/api/club/club';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import MasterAdmin from '/imports/ui/components/MasterAdmin';
 
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 class ListClubMasterAdmin extends React.Component {
@@ -18,20 +18,10 @@ class ListClubMasterAdmin extends React.Component {
   renderPage() {
     return (
         <Container>
-          <Header as="h2" textAlign="center">List Clubs (Admin)</Header>
-          <Card centered>
-            <Card.Content>
-              <Card.Header>ACM Manoa</Card.Header>
-              <Card.Meta>Association for Computing Machinery</Card.Meta>
-              <Card.Description>
-                We are ACM Manoa.
-              </Card.Description>
-            </Card.Content>
-            <Card.Content extra>
-              <Link to={'/edit'}>Edit</Link>
-              <Button basic color='red' floated='right'>Delete Club</Button>
-            </Card.Content>
-          </Card>
+          <Header as="h2" textAlign="center">Club List</Header>
+          <Card.Group centered>
+            {this.props.clubs.map((club, index) => <MasterAdmin key={index} club={club}/>)}
+          </Card.Group>
         </Container>
     );
   }
@@ -39,16 +29,16 @@ class ListClubMasterAdmin extends React.Component {
 
 /** Require an array of Stuff documents in the props. */
 ListClubMasterAdmin.propTypes = {
-  stuffs: PropTypes.array.isRequired,
+  clubs: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
 };
 
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
 export default withTracker(() => {
   // Get access to Stuff documents.
-  const subscription = Meteor.subscribe('StuffAdmin');
+  const subscription = Meteor.subscribe('MasterAdmin');
   return {
-    stuffs: Stuffs.find({}).fetch(),
+    clubs: Clubs.find({}).fetch(),
     ready: subscription.ready(),
   };
 })(ListClubMasterAdmin);
