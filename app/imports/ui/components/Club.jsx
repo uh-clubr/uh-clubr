@@ -8,6 +8,7 @@ class Club extends React.Component {
   render() {
     const cardDescStyle = { color: 'rgba(0, 0, 0, 0.87)', paddingTop: '10px' };
     const descStyle = { color: 'rgba(0, 0, 0, 0.87)' };
+    const modalContent = { paddingLeft: '0px' };
     return (
         <Card fluid>
           <Card.Content floated='left'>
@@ -36,7 +37,7 @@ class Club extends React.Component {
                         {this.props.club.contact_person}
                       </a>
                       <a href={this.props.club.rio_facebook}>
-                        <Icon name='facebook' color='facebook'/>
+                        <Icon name='facebook'/>
                       </a>
                       <a href={this.props.club.rio_instagram}>
                         <Icon name='instagram'/>
@@ -54,22 +55,29 @@ class Club extends React.Component {
                 </Grid.Column>
                 <Modal trigger={
                   <Button icon compact fluid attached='bottom' size='mini'>
-                    <Icon large name='angle down'/>
+                    <Icon name='angle down'/>
                   </Button>
                 }>
                   <Modal.Header>{this.props.club.name}</Modal.Header>
                   <Modal.Content scrolling>
                     <Image src={this.props.club.image} fluid/>
-                    <Modal.Description>
-                      <Header>Modal Header</Header>
+                    <Modal.Description className={modalContent}>
+                      <Header>About Us</Header>
                       <p style={descStyle}>
                         {this.props.club.description}
+                      </p>
+                    </Modal.Description>
+                    <Modal.Description>
+                      <Header>We would get a long if you...</Header>
+                      <p style={descStyle}>
+                        ANSWER HERE
                       </p>
                     </Modal.Description>
                     <Modal.Description>
                       <Header>Modal Header</Header>
                       <p style={descStyle}>
                         {this.props.club.description}
+                        2nd
                       </p>
                     </Modal.Description>
                   </Modal.Content>
