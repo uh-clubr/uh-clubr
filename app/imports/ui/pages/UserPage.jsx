@@ -20,7 +20,9 @@ class UserPage extends React.Component {
         <div className='user'>
          <Container>
             <Header as="h2" textAlign="center">Profile</Header>
+           <div className='user-image'>
             <Image size='small' circular src="/images/meteor-logo.png"/>
+           </div>
             <Segment.Group horizontal>
               <Segment>
                 About:
@@ -34,6 +36,7 @@ class UserPage extends React.Component {
                 </List>
               </Segment>
             </Segment.Group>
+           <div className='user-clubs'>
             <Table celled>
               <Table.Header>
                 <Table.Row>
@@ -64,6 +67,7 @@ class UserPage extends React.Component {
               </Table.Body>
               <Table.Footer/>
             </Table>
+           </div>
           </Container>
         </div>
     );

@@ -37,22 +37,10 @@ class LandingOne extends React.Component {
     }
 
     render() {
-        const gridStyle = {
-            marginTop: '14px',
-        };
-        const landingbg = {
-            backgroundImage: 'url(/images/bg.png)',
-            backgroundSize: 'cover',
-            flex: '1',
-            paddingBottom: '15px',
-        };
         const headerStyle = {
             marginTop: '25px',
             fontWeight: 'bold',
             color: '#ffffff',
-        };
-        const logoStyle = {
-            margin: '0px',
         };
         return (
             <div className='landing-background'>
