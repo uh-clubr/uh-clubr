@@ -1,13 +1,74 @@
 {
   "defaultAccounts": [
-    { "email": "admin@foo.com", "password": "changeme", "role": "admin" },
-    { "email": "john@foo.com", "password": "changeme" }
+    {
+      "email": "admin@foo.com",
+      "password": "changeme",
+      "role": "admin"
+    },
+    {
+      "email": "john@foo.com",
+      "password": "changeme"
+    },
+    {
+      "email": "clubadmin@foo.com",
+      "password": "changeme",
+      "role": "clubAdmin"
+    }
   ],
-
   "defaultData": [
-    { "name": "Basket", "quantity": 3, "owner": "john@foo.com", "condition": "excellent" },
-    { "name": "Bicycle", "quantity": 2, "owner": "john@foo.com", "condition": "poor" },
-    { "name": "Banana", "quantity": 2, "owner": "admin@foo.com", "condition": "good" },
-    { "name": "Boogie Board", "quantity": 2, "owner": "admin@foo.com", "condition": "excellent" }
+    {
+      "name": "Basket",
+      "quantity": 3,
+      "owner": "john@foo.com",
+      "condition": "excellent"
+    },
+    {
+      "name": "Bicycle",
+      "quantity": 2,
+      "owner": "john@foo.com",
+      "condition": "poor"
+    },
+    {
+      "name": "Banana",
+      "quantity": 2,
+      "owner": "admin@foo.com",
+      "condition": "good"
+    },
+    {
+      "name": "Boogie Board",
+      "quantity": 2,
+      "owner": "admin@foo.com",
+      "condition": "excellent"
+    }
+  ],
+  "defaultClubs": [
+    {
+      "name": "Grey Hats at UHM",
+      "type": "Academic/Professional",
+      "contact_person": "Olivia Murray",
+      "contact_email": "omurray4@hawaii.edu",
+      "rio_email": "greyhats@hawaii.edu",
+      "rio_website": "http://uhmgreyhats.github.io",
+      "rio_facebook": "",
+      "rio_instagram": "",
+      "rio_twitter": "",
+      "image": "http://www.ics.hawaii.edu/wp-content/uploads/2013/08/small-greyhats-teamSpr2011.jpg",
+      "description": "The Grey Hats is a student-led, extracurricular organization focused on real-world training for cyber defense. Membership gives students an outstanding opportunity to learn and apply critical skills, attack and defend systems, and to network with others interested in modern security issues.",
+      "owner": "admin@foo.com"
+    },
+    {
+      "name": "Travel2Change",
+      "type": "Student Affairs",
+      "contact_person": "Angela Ziggy Kitsou",
+      "contact_email": "angelazk@hawaii.edu",
+      "rio_email": "uhm@travel2change.org",
+      "rio_website": "travel2change.org",
+      "rio_facebook": "https://www.facebook.com/travel2change",
+      "rio_instagram": "https://www.instagram.com/travel2change/",
+      "rio_twitter": "",
+      "image": "http://travel2change.org/wp-content/uploads/2017/11/change.png",
+      "description": "We all love to travel. But let’s face it—travel can create social and environmental problems. At travel2change we believe that by exploring the world, we can better it. Discover fun and impactful activities offered by local communities. Together we can transform tourism so that local communities benefit.  travel2change is a Hawaii based 501(c)(3) nonprofit organization.",
+      "owner": "admin@foo.com"
+    }
   ]
 }
