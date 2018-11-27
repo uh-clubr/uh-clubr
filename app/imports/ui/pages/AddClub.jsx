@@ -42,28 +42,30 @@ class AddClub extends React.Component {
   render() {
     return (
         <div className='add-club'>
-          <Grid container centered>
-            <Grid.Column>
-              <Header as="h2" textAlign="center">Add Club</Header>
-              <AutoForm ref={(ref) => { this.formRef = ref; }} schema={ClubSchema} onSubmit={this.submit}>
-                <Segment>
-                  <TextField name='contact_person'/>
-                  <TextField name='contact_email'/>
-                  <TextField name='rio_email'/>
-                  <TextField name='rio_website'/>
-                  <TextField name='rio_facebook'/>
-                  <TextField name='rio_instagram'/>
-                  <TextField name='rio_twitter'/>
-                  <TextField name='image'/>
-                  <LongTextField name='description'/>
-                  <SubmitField value='Submit'/>
-                  <ErrorsField/>
-                  <HiddenField name='owner' value='fakeuser@foo.com'/>
-                </Segment>
-              </AutoForm>
-            </Grid.Column>
-          </Grid>
-        </div>
+        <Grid container centered>
+          <Grid.Column>
+            <Header as="h2" textAlign="center">Add Club</Header>
+            <AutoForm ref={(ref) => { this.formRef = ref; }} schema={ClubSchema} onSubmit={this.submit}>
+              <Segment>
+                <TextField name='name'/>
+                <TextField name='type'/>
+                <TextField name='contact_person'/>
+                <TextField name='contact_email'/>
+                <TextField name='rio_email'/>
+                <TextField name='rio_website'/>
+                <TextField name='rio_facebook'/>
+                <TextField name='rio_instagram'/>
+                <TextField name='rio_twitter'/>
+                <TextField name='image'/>
+                <LongTextField name='description'/>
+                <SubmitField value='Submit'/>
+                <ErrorsField/>
+                <HiddenField name='owner' value='fakeuser@foo.com'/>
+              </Segment>
+            </AutoForm>
+          </Grid.Column>
+        </Grid>
+      </div>
     );
   }
 }
