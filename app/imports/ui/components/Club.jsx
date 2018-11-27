@@ -7,12 +7,12 @@ import { withRouter } from 'react-router-dom';
 class Club extends React.Component {
   render() {
     const cardDescStyle = { color: 'rgba(0, 0, 0, 0.87)', paddingTop: '10px' };
+    const descStyle = { color: 'rgba(0, 0, 0, 0.87)' };
     return (
         <Card fluid>
           <Card.Content floated='left'>
             <Grid stackable columns={2}>
               <Grid.Row>
-                <Card.Description>{this.props.club.description}</Card.Description>
                 <Grid.Column width={5}>
                   <Image floated='left' rounded size='large' src={this.props.club.image}/>
                 </Grid.Column>
@@ -35,14 +35,12 @@ class Club extends React.Component {
                         <Icon name='address card outline'/>
                         {this.props.club.contact_person}
                       </a>
-                      {/* <Button circular compact color='facebook' icon='facebook'/> */}
                       <a href={this.props.club.rio_facebook}>
                         <Icon name='facebook' color='facebook'/>
                       </a>
                       <a href={this.props.club.rio_instagram}>
                         <Icon name='instagram'/>
                       </a>
-                      {/* <Button circular compact color='twitter' icon='twitter' /> */}
                       <a href={this.props.club.rio_twitter}>
                         <Icon name='twitter'/>
                       </a>
@@ -60,11 +58,19 @@ class Club extends React.Component {
                   </Button>
                 }>
                   <Modal.Header>{this.props.club.name}</Modal.Header>
-                  <Modal.Content image scrolling>
-                    <Image size='medium' src={this.props.club.image} wrapped/>
+                  <Modal.Content scrolling>
+                    <Image src={this.props.club.image} fluid/>
                     <Modal.Description>
                       <Header>Modal Header</Header>
-                      <p>This is an example of expanded content that will cause the modals dimmer to scroll</p>
+                      <p style={descStyle}>
+                        {this.props.club.description}
+                      </p>
+                    </Modal.Description>
+                    <Modal.Description>
+                      <Header>Modal Header</Header>
+                      <p style={descStyle}>
+                        {this.props.club.description}
+                      </p>
                     </Modal.Description>
                   </Modal.Content>
                 </Modal>
