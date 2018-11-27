@@ -46,6 +46,8 @@ class AddClub extends React.Component {
             <Header as="h2" textAlign="center">Add Club</Header>
             <AutoForm ref={(ref) => { this.formRef = ref; }} schema={ClubSchema} onSubmit={this.submit}>
               <Segment>
+                <TextField name='name'/>
+                <TextField name='type'/>
                 <TextField name='contact_person'/>
                 <TextField name='contact_email'/>
                 <TextField name='rio_email'/>

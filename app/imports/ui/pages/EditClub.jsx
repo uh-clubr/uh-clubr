@@ -36,6 +36,8 @@ class EditClub extends React.Component {
             <Header as="h2" textAlign="center">Edit Club</Header>
             <AutoForm schema={ClubSchema} onSubmit={this.submit} model={this.props.doc}>
               <Segment>
+                <TextField name='name'/>
+                <TextField name='type'/>
                 <TextField name='contact_person'/>
                 <TextField name='contact_email'/>
                 <TextField name='rio_email'/>
