@@ -17,13 +17,16 @@ class ListClubs extends React.Component {
   /** Render the page once subscriptions have been received. */
   renderPage() {
     return (
-        <Container>
-          <Header as="h1" textAlign="center">Club List</Header>
-          <Card.Group>
-            {this.props.clubs.map((club, index) => <Club key={index} club={club}/>)}
-            {/* this.clubs.filter(club => club.type === 'Student Affairs').map((club, index) => <Club key={index} club={club}/>) */}
-          </Card.Group>
-        </Container>
+
+        <div className='list-clubs'>
+          <Container>
+            <Header as="h1" textAlign="center">Club List</Header>
+            <Card.Group centered>
+              {this.props.clubs.map((club, index) => <Club key={index} club={club}/>)}
+              {/* this.clubs.filter(club => club.type === 'Student Affairs').map((club, index) => <Club key={index} club={club}/>) */}
+            </Card.Group>
+          </Container>
+        </div>
     );
   }
 }
