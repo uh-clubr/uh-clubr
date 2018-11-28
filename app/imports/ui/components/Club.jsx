@@ -17,40 +17,52 @@ class Club extends React.Component {
           <Card.Content floated='left'>
             <Grid stackable columns={2}>
               <Grid.Row style={clubCard}>
-                      <Grid.Column width={5}>
-                        <Image floated='left' rounded size='large' src={this.props.club.image}/>
-                      </Grid.Column>
-                      <Grid.Column width={11} stretched>
-                        <Grid.Row>
-                          <Header
+                <Grid.Column width={5}>
+                  <Image floated='left' rounded size='large' src={this.props.club.image}/>
+                </Grid.Column>
+                <Grid.Column width={11} stretched>
+                  <Grid.Row>
+                    <Header
                         as='h2'
                         floated='left'
                         content={this.props.club.name}
                         subheader={this.props.club.type}
                     />
                     <Container textAlign='right'>
-                      <a href={this.props.club.rio_website}>
-                        <Icon name='desktop' color='grey'/>
-                      </a>
-                      <a href={this.props.club.rio_email}>
-                        <Icon name='envelope outline' color='grey'/>
-                      </a>
-                      <a href={this.props.club.contact_email} color='grey'>
-                        <Popup
-                            trigger={<Icon name='address card outline' color='grey'/>}
-                            size='tiny'>
-                          {this.props.club.contact_person}
-                        </Popup>
-                      </a>
-                      <a href={this.props.club.rio_facebook}>
-                        <Icon name='facebook' color='grey'/>
-                      </a>
-                      <a href={this.props.club.rio_instagram}>
-                        <Icon name='instagram' color='grey'/>
-                      </a>
-                      <a href={this.props.club.rio_twitter}>
-                        <Icon name='twitter' color='grey'/>
-                      </a>
+                      {this.props.club.rio_website
+                          ? <a href={this.props.club.rio_website}>
+                            <Icon name='desktop' color='grey'/>
+                          </a>
+                          : ''}
+                      {this.props.club.rio_email
+                          ? <a href={this.props.club.rio_email}>
+                            <Icon name='envelope outline' color='grey'/>
+                          </a>
+                          : ''}
+                      {this.props.club.contact_email
+                          ? <a href={this.props.club.contact_email} color='grey'>
+                            <Popup
+                                trigger={<Icon name='address card outline' color='grey'/>}
+                                size='tiny'>
+                              {this.props.club.contact_person}
+                            </Popup>
+                          </a>
+                          : ''}
+                      {this.props.club.rio_facebook
+                          ? <a href={this.props.club.rio_facebook}>
+                            <Icon name='facebook' color='grey'/>
+                          </a>
+                          : ''}
+                      {this.props.club.rio_instagram
+                          ? <a href={this.props.club.rio_instagram}>
+                            <Icon name='instagram' color='grey'/>
+                          </a>
+                          : ''}
+                      {this.props.club.rio_twitter
+                          ? <a href={this.props.club.rio_twitter}>
+                            <Icon name='twitter' color='grey'/>
+                          </a>
+                          : ''}
                     </Container>
                   </Grid.Row>
                   <Grid.Row>
