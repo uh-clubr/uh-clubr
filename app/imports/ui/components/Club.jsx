@@ -12,6 +12,8 @@ class Club extends React.Component {
     const modalButton = { padding: '0px', marginTop: '10px' };
     const modalContent = { padding: '0px' };
     const modalInfo = { padding: '14px' };
+    const uhgreen = { color: 'rgb(32,79,50)' };
+    const modalHeader = { color: 'rgb(32,79,50)', padding: '14px 18px 14px 18px' };
     return (
         <Card fluid>
           <Card.Content floated='left'>
@@ -27,6 +29,7 @@ class Club extends React.Component {
                         floated='left'
                         content={this.props.club.name}
                         subheader={this.props.club.type}
+                        style={uhgreen}
                     />
                     <Container textAlign='right'>
                       {this.props.club.rio_website
@@ -71,12 +74,14 @@ class Club extends React.Component {
                     </div>
                   </Grid.Row>
                 </Grid.Column>
-                <Modal trigger={
-                  <Button icon compact fluid attached='bottom' size='mini' style={modalButton}>
-                    <Icon name='angle down'/>
-                  </Button>
-                }>
-                  <Modal.Header>{this.props.club.name}</Modal.Header>
+                <Modal
+                    size='small'
+                    trigger={
+                      <Button icon compact fluid attached='bottom' size='mini' style={modalButton}>
+                        <Icon name='angle down'/>
+                      </Button>
+                    }>
+                  <Modal.Header style={modalHeader}>{this.props.club.name}</Modal.Header>
                   <Modal.Content scrolling style={modalContent}>
                     <Image src={this.props.club.image} fluid/>
                     <Modal.Description style={modalInfo}>
@@ -89,10 +94,28 @@ class Club extends React.Component {
                     <Modal.Description style={modalInfo}>
                       <Header>We would get along if you...</Header>
                       <p style={descStyle}>
-                        ANSWER HERE
+                        Example: answer here
                       </p>
                     </Modal.Description>
                     <Image src={this.props.club.image} fluid/>
+                    <Modal.Description style={modalInfo}>
+                      <Header>If we had a million dollars, we would...</Header>
+                      <p style={descStyle}>
+                        Example: Invest
+                      </p>
+                    </Modal.Description>
+                    <Modal.Description style={modalInfo}>
+                      <Header>After class you would probably find us...</Header>
+                      <p style={descStyle}>
+                        Example: Invest
+                      </p>
+                    </Modal.Description>
+                    <Modal.Description style={modalInfo}>
+                      <Header>"When we're not talking about" {this.props.club.name}, you </Header>
+                      <p style={descStyle}>
+                        Example: Invest
+                      </p>
+                    </Modal.Description>
                     <Modal.Description style={modalInfo}>
                       <Header>Meet us!</Header>
                       <p style={descStyle}>
