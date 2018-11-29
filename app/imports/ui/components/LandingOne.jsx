@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 import React from 'react';
 import {Grid, Header, Image, Icon, Segment, Form, Message} from 'semantic-ui-react';
-import { withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { withTracker } from 'meteor/react-meteor-data';
 import { Meteor } from 'meteor/meteor';
@@ -31,28 +31,16 @@ class LandingOne extends React.Component {
             if (err) {
                 this.setState({ error: err.reason });
             } else {
-                // browserHistory.push('/login');
+                this.props.history.push('/login');
             }
         });
     }
 
     render() {
-        const gridStyle = {
-            marginTop: '14px',
-        };
-        const landingbg = {
-            backgroundImage: 'url(/images/bg.png)',
-            backgroundSize: 'cover',
-            flex: '1',
-            paddingBottom: '15px',
-        };
         const headerStyle = {
             marginTop: '25px',
             fontWeight: 'bold',
             color: '#ffffff',
-        };
-        const logoStyle = {
-            margin: '0px',
         };
         return (
             <div className='landing-background'>
