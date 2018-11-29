@@ -18,6 +18,7 @@
 
 .landing-header-style {
   margin-top: 25px;
+  color: white;
   font-weight: bold;
 }
 
@@ -66,11 +67,11 @@
 }
 
 .club-admin {
-font-family: Helvetica, serif;
+  font-family: Helvetica, serif;
 }
 
 .club-master-admin {
-font-family: Helvetica, serif;
+  font-family: Helvetica, serif;
 }
 
 .list-clubs {
@@ -78,6 +79,14 @@ font-family: Helvetica, serif;
 }
 
 .user {
-  font-size: 20px;
   font-family: Helvetica, serif;
+}
+
+.user-image {
+  margin-top: 10px;
+  margin-bottom: 60px;
+}
+
+.user-clubs {
+  margin-bottom: 30px;
 }

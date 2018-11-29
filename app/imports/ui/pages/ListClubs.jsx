@@ -92,11 +92,20 @@ class ListClubs extends React.Component {
 
   /** Render the page once subscriptions have been received. */
   renderPage() {
+    const landingbg = {
+      backgroundImage: 'url(/images/bg.png)',
+      backgroundSize: 'cover',
+      flex: '1',
+    };
+    const headerStyle = {
+      paddingTop: '20px',
+      paddingBottom: '10px',
+    };
     return (
-
+      <div style={landingbg}>
         <div className='list-clubs'>
           <Container>
-            <Header as="h1" textAlign="center">Club List</Header>
+            <Header as="h1" textAlign="center" inverted style={headerStyle}>Club Directory</Header>
             <p>Select a filter from the options below.</p>
             <Card.Group centered>
               <Dropdown inverted placeholder='Select a filter' defaultValue={'none'} onChange={this.ClubFilter} fluid
@@ -104,6 +113,7 @@ class ListClubs extends React.Component {
             </Card.Group>
           </Container>
         </div>
+      </div>
     );
   }
 }
