@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 import React from 'react';
 import {Grid, Header, Image, Icon, Segment, Form, Message} from 'semantic-ui-react';
-import { withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { withTracker } from 'meteor/react-meteor-data';
 import { Meteor } from 'meteor/meteor';
@@ -31,7 +31,7 @@ class LandingOne extends React.Component {
             if (err) {
                 this.setState({ error: err.reason });
             } else {
-                // browserHistory.push('/login');
+                this.props.history.push('/login');
             }
         });
     }
