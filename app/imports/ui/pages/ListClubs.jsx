@@ -16,17 +16,27 @@ class ListClubs extends React.Component {
 
   /** Render the page once subscriptions have been received. */
   renderPage() {
+    const landingbg = {
+      backgroundImage: 'url(/images/bg.png)',
+      backgroundSize: 'cover',
+      flex: '1',
+    };
+    const headerStyle = {
+      paddingTop: '20px',
+      paddingBottom: '10px',
+    };
     return (
-
+      <div style={landingbg}>
         <div className='list-clubs'>
           <Container>
-            <Header as="h1" textAlign="center">Club List</Header>
+            <Header as="h1" textAlign="center" inverted style={headerStyle}>Club Directory</Header>
             <Card.Group centered>
               {this.props.clubs.map((club, index) => <Club key={index} club={club}/>)}
               {/* this.clubs.filter(club => club.type === 'Student Affairs').map((club, index) => <Club key={index} club={club}/>) */}
             </Card.Group>
           </Container>
         </div>
+      </div>
     );
   }
 }
