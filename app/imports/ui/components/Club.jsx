@@ -6,14 +6,32 @@ import { withRouter } from 'react-router-dom';
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 class Club extends React.Component {
   render() {
-    const cardDescStyle = { color: 'rgba(0, 0, 0, 0.87)', paddingTop: '10px' };
-    const descStyle = { color: 'rgba(0, 0, 0, 0.87)' };
+    const cardDescStyle = {
+      color: 'rgba(0, 0, 0, 0.87)',
+      paddingTop: '10px',
+      fontWeight: 'normal',
+    };
+    const descStyle = {
+      color: 'rgba(0, 0, 0, 0.87)',
+      fontWeight: 'normal',
+      fontSize: '1.2em',
+    };
     const clubCard = { paddingBottom: '0px' };
     const modalButton = { padding: '0px', marginTop: '10px' };
     const modalContent = { padding: '0px' };
-    const modalInfo = { padding: '14px' };
+    const modalInfo = { padding: '15px 25px 25px 25px' };
     const uhgreen = { color: 'rgb(32,79,50)' };
-    const modalHeader = { color: 'rgb(32,79,50)', padding: '14px 18px 14px 18px' };
+    const modalHeader = {
+      color: 'rgb(32,79,50)',
+      padding: '14px 18px 14px 18px',
+      fontSize: '1.7em',
+    };
+    const modalQuestionHeader = {
+      color: 'rgba(32,79,50,0.4)',
+      marginBottom: '5px',
+      fontWeight: 'normal',
+      fontSize: '1em',
+    };
     return (
         <Card fluid>
           <Card.Content floated='left'>
@@ -81,43 +99,37 @@ class Club extends React.Component {
                         <Icon name='angle down'/>
                       </Button>
                     }>
-                  <Modal.Header style={modalHeader}>{this.props.club.name}</Modal.Header>
+                  <Modal.Header style={modalHeader} as='h1'>{this.props.club.name}</Modal.Header>
                   <Modal.Content scrolling style={modalContent}>
                     <Image src={this.props.club.image} fluid/>
                     <Modal.Description style={modalInfo}>
-                      <Header>We are...</Header>
+                      <Header style={modalQuestionHeader} as='h5'>We are...</Header>
                       <p style={descStyle}>
                         {this.props.club.description}
                       </p>
                     </Modal.Description>
                     <Image src={this.props.club.image} fluid/>
                     <Modal.Description style={modalInfo}>
-                      <Header>We would get along if you...</Header>
+                      <Header style={modalQuestionHeader}>We would get along if you...</Header>
                       <p style={descStyle}>
                         Example: answer here
                       </p>
                     </Modal.Description>
                     <Image src={this.props.club.image} fluid/>
                     <Modal.Description style={modalInfo}>
-                      <Header>If we had a million dollars, we would...</Header>
+                      <Header style={modalQuestionHeader}>If we had a million dollars, we would...</Header>
                       <p style={descStyle}>
                         Example: Invest
                       </p>
                     </Modal.Description>
                     <Modal.Description style={modalInfo}>
-                      <Header>After class you would probably find us...</Header>
+                      <Header style={modalQuestionHeader}>After class you would probably find us...</Header>
                       <p style={descStyle}>
                         Example: Invest
                       </p>
                     </Modal.Description>
                     <Modal.Description style={modalInfo}>
-                      <Header>"When we're not talking about" {this.props.club.name}, you </Header>
-                      <p style={descStyle}>
-                        Example: Invest
-                      </p>
-                    </Modal.Description>
-                    <Modal.Description style={modalInfo}>
-                      <Header>Meet us!</Header>
+                      <Header style={modalQuestionHeader}>Meet us!</Header>
                       <p style={descStyle}>
                         Example:
                         M 3:30-4:00
