@@ -7,7 +7,6 @@ import { withTracker } from 'meteor/react-meteor-data';
 import { Meteor } from 'meteor/meteor';
 import { Accounts } from 'meteor/accounts-base';
 
-
 class LandingOne extends React.Component {
     /** Initialize state fields. */
     constructor(props) {
