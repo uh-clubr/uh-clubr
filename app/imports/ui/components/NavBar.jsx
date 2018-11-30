@@ -10,39 +10,19 @@ import { Roles } from 'meteor/alanning:roles';
 /** The NavBar appears at the top of every page. Rendered by the App Layout component. */
 class NavBar extends React.Component {
     render() {
-        const menuStyle = {
-            marginBottom: '0px',
-            backgroundColor: 'black',
-            paddingBottom: '10px',
-            fontSize: '20px',
-            fontFamily: 'Helvetica',
-            marginLeft: '0px',
-            boxShadow: 'none',
-        };
-        const itemStyle = {
-            padding: '3px',
-            margin: '10px',
-        };
-        const iconMargin = {
-            margin: '2px',
-        };
-        const menuItemStyle = {
-            padding: '10px',
-        };
-
         return (
-            <Menu style={menuStyle} attached="top" borderless inverted>
-                <Menu.Item style={menuItemStyle} as={NavLink} activeClassName="" exact to="/">
+            <Menu className='nav-menu-style' attached="top" borderless inverted>
+                <Menu.Item className='nav-menu-item-style' as={NavLink} activeClassName="" exact to="/">
                     <Image src='/images/NavLogo.PNG' size='tiny' />
                 </Menu.Item>
                 {/* Checks if user is admin, if not keeps user menu */}
                 {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
-                    [<Menu.Item style={menuItemStyle} as={NavLink} activeClassName="active" exact to="/add" key='add'>Add Club</Menu.Item>,
+                    [<Menu.Item className='nav-menu-item-style' as={NavLink} activeClassName="active" exact to="/add" key='add'>Add Club</Menu.Item>,
                         <Menu.Item as={NavLink} activeClassName="active" exact to="/admin"
                                    key='admin'>Admin</Menu.Item>]
                 ) : ''}
                 {Roles.userIsInRole(Meteor.userId(), 'clubAdmin') ? (
-                    <Menu.Item style={menuItemStyle} as={NavLink} activeClassName="active" exact to="/clubadminlist"
+                    <Menu.Item className='nav-menu-item-style' as={NavLink} activeClassName="active" exact to="/clubadminlist"
                                key='clubadminlist'>List My Clubs</Menu.Item>
                 ) : ''}
                 {/* Checks if user is logged in to display user options */}
@@ -51,9 +31,9 @@ class NavBar extends React.Component {
                                 key='list'>List Clubs</Menu.Item>]
                 ) : ''}
                 {/* Sign in if not signed in */}
-                <Menu.Item style={itemStyle}>
+                <Menu.Item className='nav-item-style'>
                     {this.props.currentUser === '' ? (
-                        <Dropdown style={iconMargin} text="Login" pointing="top right" icon={'user'}>
+                        <Dropdown className='nav-icon-margin' text="Login" pointing="top right" icon={'user'}>
                             <Dropdown.Menu>
                                 <Dropdown.Item icon="user" text="Sign In" as={NavLink} exact to="/signin"/>
                                 <Dropdown.Item icon="add user" text="Sign Up" as={NavLink} exact to="/signup"/>

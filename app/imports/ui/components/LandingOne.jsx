@@ -37,11 +37,6 @@ class LandingOne extends React.Component {
     }
 
     render() {
-        const headerStyle = {
-            marginTop: '25px',
-            fontWeight: 'bold',
-            color: '#ffffff',
-        };
         return (
             <div className='landing-background'>
               <div className='landing-grid-style'>
@@ -59,9 +54,9 @@ class LandingOne extends React.Component {
                     </Grid.Row>
                     <Grid.Row>
                         <Grid.Column>
-                            <Header style={headerStyle}>
+                            <Header className='landing-header-style'>
                                 What we can do for you
-                                <Header.Subheader style={headerStyle}>
+                                <Header.Subheader className='landing-header-style'>
                                     Here at Clubr, we have a directory of registered and unregistered clubs.
                                     As a user, you can find a club that matches your interests and find their contact
                                     information through our club list directory.

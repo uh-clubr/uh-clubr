@@ -36,11 +36,11 @@ class UserPage extends React.Component {
                 </List>
               </Segment>
             </Segment.Group>
-           <div className='user-clubs'>
+           <div>
             <Table celled>
               <Table.Header>
                 <Table.Row>
-                  <Table.HeaderCell>Club</Table.HeaderCell>
+                  <Table.HeaderCell className='content'>Club</Table.HeaderCell>
                   <Table.HeaderCell>Description</Table.HeaderCell>
                   <Table.HeaderCell>Size</Table.HeaderCell>
                   <Table.HeaderCell>Tags</Table.HeaderCell>
