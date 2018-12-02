@@ -4,6 +4,7 @@ import { Grid, Header, Segment, Step, Button } from 'semantic-ui-react';
 import AutoForm from 'uniforms-semantic/AutoForm';
 import TextField from 'uniforms-semantic/TextField';
 import LongTextField from 'uniforms-semantic/LongTextField';
+import SubmitField from 'uniforms-semantic/SubmitField';
 import HiddenField from 'uniforms-semantic/HiddenField';
 import ErrorsField from 'uniforms-semantic/ErrorsField';
 import { Bert } from 'meteor/themeteorchef:bert';
@@ -45,16 +46,17 @@ class AddClub extends React.Component {
     return (
         <div className='add-club'>
           <Step.Group ordered centered>
-            <Step active>
+            <Step completed>
               <Step.Content>
                 <Step.Title>Add Basic Info</Step.Title>
                 <Step.Description>Add the necessary information about the club.</Step.Description>
               </Step.Content>
             </Step>
 
-            <Step disabled>
+            <Step active>
               <Step.Content>
                 <Step.Title>Add More Info</Step.Title>
+                <Step.Description>Add more exciting information about the club.</Step.Description>
               </Step.Content>
             </Step>
           </Step.Group>
@@ -74,11 +76,11 @@ class AddClub extends React.Component {
                 <TextField name='rio_twitter'/>
                 <TextField name='image'/>
                 <LongTextField name='description'/>
+                <SubmitField value='Submit'/>
                 <ErrorsField/>
                 <HiddenField name='owner' value='fakeuser@foo.com'/>
               </Segment>
             </AutoForm>
-            <Button><Link to={'/addclub2'}>Next</Link></Button>
           </Grid.Column>
         </Grid>
       </div>
