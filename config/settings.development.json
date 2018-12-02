@@ -70,5 +70,17 @@
       "description": "We all love to travel. But let’s face it—travel can create social and environmental problems. At travel2change we believe that by exploring the world, we can better it. Discover fun and impactful activities offered by local communities. Together we can transform tourism so that local communities benefit.  travel2change is a Hawaii based 501(c)(3) nonprofit organization.",
       "owner": "admin@foo.com"
     }
-  ]
+  ],
+  "defaultProfile": [
+
+  {
+    "name": "Name",
+    "interest": "None",
+    "major": "Major",
+    "email": "Email",
+    "bio": "Bio",
+    "image": "https://www.what-dog.net/Images/faces2/scroll001.jpg",
+    "owner": "admin@foo.com"
+  }
+    ]
 }
