@@ -1,6 +1,6 @@
 import React from 'react';
 import { Clubs, ClubSchema } from '/imports/api/club/club';
-import { Grid, Header, Segment, Step, Button } from 'semantic-ui-react';
+import { Grid, Header, Segment, Step } from 'semantic-ui-react';
 import AutoForm from 'uniforms-semantic/AutoForm';
 import TextField from 'uniforms-semantic/TextField';
 import LongTextField from 'uniforms-semantic/LongTextField';
@@ -9,7 +9,6 @@ import HiddenField from 'uniforms-semantic/HiddenField';
 import ErrorsField from 'uniforms-semantic/ErrorsField';
 import { Bert } from 'meteor/themeteorchef:bert';
 import { Meteor } from 'meteor/meteor';
-import { Link } from 'react-router-dom';
 
 /** Renders the Page for adding a document. */
 class AddClub extends React.Component {
@@ -43,8 +42,14 @@ class AddClub extends React.Component {
 
   /** Render the form. Use Uniforms: https://github.com/vazco/uniforms */
   render() {
+    const stepStyle = {
+      marginTop: '20px',
+      marginLeft: '200px',
+      marginBottom: '20px',
+    };
     return (
         <div className='add-club'>
+          <div style={stepStyle}>
           <Step.Group ordered centered>
             <Step completed>
               <Step.Content>
@@ -60,6 +65,7 @@ class AddClub extends React.Component {
               </Step.Content>
             </Step>
           </Step.Group>
+          </div>
         <Grid container centered>
           <Grid.Column>
             <Header as="h2" textAlign="center">Add Club</Header>

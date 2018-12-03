@@ -16,14 +16,21 @@ class ListClubAdmin extends React.Component {
 
   /** Render the page once subscriptions have been received. */
   renderPage() {
+    const landingbg = {
+      backgroundImage: 'url(/images/bg.png)',
+      backgroundSize: 'cover',
+      flex: '1',
+    };
     return (
+        <div style={landingbg}>
         <div className='club-admin'>
           <Container>
-            <Header as="h2" textAlign="center">Club List</Header>
+            <Header as="h2" textAlign="center" inverted>Club List</Header>
             <Card.Group centered>
               {this.props.clubs.map((club, index) => <ClubAdmin key={index} club={club}/>)}
             </Card.Group>
           </Container>
+        </div>
         </div>
     );
   }

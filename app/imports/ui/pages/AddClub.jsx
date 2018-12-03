@@ -42,22 +42,29 @@ class AddClub extends React.Component {
 
   /** Render the form. Use Uniforms: https://github.com/vazco/uniforms */
   render() {
+    const stepStyle = {
+      marginTop: '20px',
+      marginLeft: '200px',
+      marginBottom: '20px',
+    };
     return (
         <div className='add-club'>
-          <Step.Group ordered centered>
-            <Step active>
-              <Step.Content>
-                <Step.Title>Add Basic Info</Step.Title>
-                <Step.Description>Add the necessary information about the club.</Step.Description>
-              </Step.Content>
-            </Step>
+          <div style={stepStyle}>
+            <Step.Group ordered>
+              <Step active>
+                <Step.Content>
+                  <Step.Title>Add Basic Info</Step.Title>
+                  <Step.Description>Add the necessary information about the club.</Step.Description>
+                </Step.Content>
+              </Step>
 
-            <Step disabled>
-              <Step.Content>
-                <Step.Title>Add More Info</Step.Title>
-              </Step.Content>
-            </Step>
-          </Step.Group>
+              <Step disabled>
+                <Step.Content>
+                  <Step.Title>Add More Info</Step.Title>
+                </Step.Content>
+              </Step>
+            </Step.Group>
+          </div>
         <Grid container centered>
           <Grid.Column>
             <Header as="h2" textAlign="center">Add Club</Header>
@@ -76,9 +83,9 @@ class AddClub extends React.Component {
                 <LongTextField name='description'/>
                 <ErrorsField/>
                 <HiddenField name='owner' value='fakeuser@foo.com'/>
+                <Button><Link to={'/addclub2'}>Next</Link></Button>
               </Segment>
             </AutoForm>
-            <Button><Link to={'/addclub2'}>Next</Link></Button>
           </Grid.Column>
         </Grid>
       </div>
