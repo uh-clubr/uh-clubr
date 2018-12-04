@@ -1,15 +1,13 @@
 import React from 'react';
 import { Clubs, ClubSchema } from '/imports/api/club/club';
-import { Grid, Header, Segment, Step } from 'semantic-ui-react';
+import { Button, Grid, Header, Segment, Step } from 'semantic-ui-react';
 import AutoForm from 'uniforms-semantic/AutoForm';
 import TextField from 'uniforms-semantic/TextField';
-import LongTextField from 'uniforms-semantic/LongTextField';
-import HiddenField from 'uniforms-semantic/HiddenField';
 import SelectField from 'uniforms-semantic/SelectField';
+import HiddenField from 'uniforms-semantic/HiddenField';
 import ErrorsField from 'uniforms-semantic/ErrorsField';
 import { Bert } from 'meteor/themeteorchef:bert';
 import { Meteor } from 'meteor/meteor';
-import SubmitField from 'uniforms-semantic/SubmitField';
 
 /** Renders the Page for adding a document. */
 class AddClub2 extends React.Component {
@@ -35,10 +33,12 @@ class AddClub2 extends React.Component {
   /** On submit, insert the data. */
   submit(data) {
     const { name, type, contact_person, contact_email, rio_email, rio_website, rio_facebook, rio_instagram,
-      rio_twitter, image, image2, image3, description } = data;
+      rio_twitter, image, image2, image3, description, addedQuestion1, addedAnswer1, addedQuestion2,
+      addedAnswer2, addedQuestion3, addedAnswer3, meetingTimesInfo } = data;
     const owner = Meteor.user().username;
     Clubs.insert({ name, type, contact_person, contact_email, rio_email, rio_website, rio_facebook, rio_instagram,
-      rio_twitter, image, image2, image3, description, owner }, this.insertCallback);
+      rio_twitter, image, image2, image3, description, addedQuestion1, addedAnswer1, addedQuestion2,
+      addedAnswer2, addedQuestion3, addedAnswer3, meetingTimesInfo, owner }, this.insertCallback);
   }
 
   /** Render the form. Use Uniforms: https://github.com/vazco/uniforms */
@@ -70,24 +70,18 @@ class AddClub2 extends React.Component {
         <Grid container centered>
           <Grid.Column>
             <Header as="h2" textAlign="center" className='header-style'>Add Club</Header>
-            <AutoForm ref={(ref) => { this.formRef = ref; }} schema={ClubSchema} onSubmit={this.submit}>
+            <AutoForm ref={(ref) => { this.formRef = ref; }} schema={ClubSchema}>
               <Segment>
-                <TextField name='name'/>
-                <SelectField name='type'/>
-                <TextField name='contact_person'/>
-                <TextField name='contact_email'/>
-                <TextField name='rio_email'/>
-                <TextField name='rio_website'/>
-                <TextField name='rio_facebook'/>
-                <TextField name='rio_instagram'/>
-                <TextField name='rio_twitter'/>
-                <TextField name='image'/>
-                <TextField name='image2'/>
-                <TextField name='image3'/>
-                <LongTextField name='description'/>
+                <SelectField name='addedQuestion1'/>
+                <TextField name='addedAnswer1'/>
+                <SelectField name='addedQuestion2'/>
+                <TextField name='addedAnswer2'/>
+                <SelectField name='addedQuestion3'/>
+                <TextField name='addedAnswer3'/>
+                <TextField name='meetingTimesInfo'/>
                 <ErrorsField/>
                 <HiddenField name='owner' value='fakeuser@foo.com'/>
-                <SubmitField value='Submit'/>
+                <Button onSubmit={this.submit}>Submit</Button>
               </Segment>
             </AutoForm>
           </Grid.Column>
