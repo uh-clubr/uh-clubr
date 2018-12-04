@@ -20,7 +20,7 @@ class ListClubMasterAdmin extends React.Component {
         <div className='landing-background'>
          <Container>
             <Header as="h2" textAlign="center" className='header-style'>Club List</Header>
-            <Card.Group centered>
+            <Card.Group centered className='club-master-admin'>
               {this.props.clubs.map((club, index) => <MasterAdmin key={index} club={club}/>)}
             </Card.Group>
           </Container>
