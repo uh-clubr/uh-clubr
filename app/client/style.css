@@ -4,6 +4,16 @@
   color: #FFFFFF;
 }
 
+.header-style {
+  padding-top: 20px !important;
+  padding-bottom: 10px !important;
+  text-shadow:
+      -1px -1px 0 #000,
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+      1px 1px 0 #000;
+}
+
 .landing-grid-style {
   margin-top: 14px;
 }
@@ -19,6 +29,13 @@
   margin-top: 25px !important;
   color: white !important;
   font-weight: bold !important;
+  font-size: 20px !important;
+  font-family: "Times New Roman", serif !important;
+  text-shadow:
+      -1px -1px 0 #000,
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+      1px 1px 0 #000;
 }
 
 .landing-logo-style {
@@ -30,7 +47,7 @@
   background-color: black !important;
   padding-bottom: 10px !important;
   font-size: 20px !important;
-  font-family: Helvetica, serif !important;
+  font-family: Lora, serif !important;
   margin-left: 0 !important;
   box-shadow: none !important;
 }
@@ -75,11 +92,6 @@
 
 .list-clubs {
   font-family: Helvetica, serif;
-}
-
-.list-clubs-header-style {
-  padding-top: 20px;
-  padding-bottom: 10px;
 }
 
 .user {
