@@ -47,16 +47,15 @@ class LandingOne extends React.Component {
                       </div>
                     </Grid.Row>
                     <Grid.Row>
-                      <div className='landing-header-style'>
-                        <Header inverted>Welcome to Clubr, where you can search for the club you
+                        <Header className='landing-header-style'>Welcome to Clubr, where you can search for the club you
                             desire!</Header>
-                      </div>
                     </Grid.Row>
                     <Grid.Row>
                         <Grid.Column>
-                            <Header className='landing-header-style'>
+                            <Header className='landing-header-styletwo'>
                                 What we can do for you
-                                <Header.Subheader className='landing-header-style'>
+                              <hr/>
+                                <Header.Subheader className='landing-header-styletwo'>
                                     Here at Clubr, we have a directory of registered and unregistered clubs.
                                     As a user, you can find a club that matches your interests and find their contact
                                     information through our club list directory.
