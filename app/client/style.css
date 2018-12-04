@@ -110,6 +110,22 @@
   font-family: Lora, serif;
 }
 
+.list-clubs-dropdown {
+  margin-bottom: 20px;
+}
+
+.list-clubs-header {
+  padding-top: 20px !important;
+  font-size: 18px !important;
+  font-family: Lora, serif !important;
+  color: white !important;
+  text-shadow:
+      -1px -1px 0 #000,
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+      1px 1px 0 #000;
+}
+
 .user {
   font-family: Helvetica, serif;
 }
