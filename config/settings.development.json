@@ -58,6 +58,8 @@
       "addedAnswer1": "energy drinks, gummy bears and code",
       "addedQuestion2": "If we had a million dollars, we would...",
       "addedAnswer2": "found a cyber defense startup",
+      "addedQuestion3": "",
+      "addedAnswer3": "",
       "owner": "admin@foo.com"
     },
     {
@@ -74,6 +76,10 @@
       "description": "We all love to travel. But let’s face it—travel can create social and environmental problems. At travel2change we believe that by exploring the world, we can better it. Discover fun and impactful activities offered by local communities. Together we can transform tourism so that local communities benefit.  travel2change is a Hawaii based 501(c)(3) nonprofit organization.",
       "addedQuestion1": "If we had a million dollars, we would...",
       "addedAnswer1": "go global with our organization and implement our model to help developing nations all over the world",
+      "addedQuestion2": "",
+      "addedAnswer2": "",
+      "addedQuestion3": "",
+      "addedAnswer3": "",
       "owner": "admin@foo.com",
     }
   ]
