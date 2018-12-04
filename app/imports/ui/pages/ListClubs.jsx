@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Container, Header, Loader, Card, Dropdown } from 'semantic-ui-react';
+import { Container, Header, Loader, Card, Dropdown, Segment } from 'semantic-ui-react';
 import { Clubs } from '/imports/api/club/club';
 import Club from '/imports/ui/components/Club';
 import { withTracker } from 'meteor/react-meteor-data';
@@ -9,42 +9,16 @@ import PropTypes from 'prop-types';
 
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 class ListClubs extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      search: '',
+    };
+  }
 
-  ClubFilter(type) {
-    switch (type.value) {
-      case 'Academic/Professional':
-        return this.props.clubs.filter(Clubs.type === 'Academic/Professional').map((club, index) => <Club key={index}
-                                                                                                          club={club}/>);
-      case 'Political':
-        return this.props.clubs.filter(Clubs.type === 'Political').map((club, index) => <Club key={index}
-                                                                                              club={club}/>);
-      case 'Sports/Leisure':
-        return this.props.clubs.filter(Clubs.type === 'Sports/Leisure').map((club, index) => <Club key={index}
-                                                                                                   club={club}/>);
-      case 'Ethnic/Cultural':
-        return this.props.clubs.filter(Clubs.type === 'Ethnic/Cultural').map((club, index) => <Club key={index}
-                                                                                                    club={club}/>);
-      case 'Service':
-        return this.props.clubs.filter(Clubs.type === 'Service').map((club, index) => <Club key={index}
-                                                                                            club={club}/>);
-      case 'Fraternity/Sorority':
-        return this.props.clubs.filter(Clubs.type === 'Fraternity/Sorority').map((club, index) => <Club key={index}
-                                                                                                        club={club}/>);
-      case 'Honorary Society':
-        return this.props.clubs.filter(Clubs.type === 'Honorary Society').map((club, index) => <Club key={index}
-                                                                                                     club={club}/>);
-      case 'Religious/Spiritual':
-        return this.props.clubs.filter(Clubs.type === 'Religious/Spiritual').map((club, index) => <Club key={index}
-                                                                                                        club={club}/>);
-      case 'Student Affairs':
-        return this.props.clubs.filter(Clubs.type === 'Student Affairs').map((club, index) => <Club key={index}
-                                                                                                    club={club}/>);
-      case 'None':
-        return this.props.clubs.map((club, index) => <Club key={index} club={club}/>);
-      default:
-        return this.props.clubs.map((club, index) => <Club key={index} club={club}/>);
-
-    }
+  handleChange(event, data) {
+    console.log(data.value);
+    this.setState({ search: data.value });
   }
 
   ClubTypes = [
@@ -92,23 +66,31 @@ class ListClubs extends React.Component {
 
   /** Render the page once subscriptions have been received. */
   renderPage() {
+    const clubs = (this.state.search === 'none') ? this.props.clubs : this.props.clubs.filter(club => club.type.indexOf(this.state.search) !== -1);
+    const landingbg = {
+      backgroundImage: 'url(/images/bg.png)',
+      backgroundSize: 'cover',
+      flex: '1',
+    };
     const headerStyle = {
       paddingTop: '20px',
       paddingBottom: '10px',
     };
     return (
-      <div className='landing-background'>
-        <div className='list-clubs'>
-          <Container>
-            <Header as="h1" textAlign="center" inverted style={headerStyle}>Club Directory</Header>
-            <p>Select a filter from the options below.</p>
-            <Card.Group centered>
-              <Dropdown inverted placeholder='Select a filter' defaultValue={'none'} onChange={this.ClubFilter} fluid
-                        selection options={this.ClubTypes}/>
-            </Card.Group>
-          </Container>
+        <div style={landingbg}>
+          <div className='list-clubs'>
+            <Container>
+              <Header as="h1" textAlign="center" inverted style={headerStyle}>Club Directory</Header>
+              <Segment>
+              <p>Select a filter from the options below.</p>
+              </Segment>
+              <Dropdown selection defaultValue={'none'} onChange={(event, data) => this.handleChange(event, data)} options={this.ClubTypes} fluid/>
+              <Card.Group centered>
+                {clubs.map((club, index) => <Club key={index} club={club}/>)}
+              </Card.Group>
+            </Container>
+          </div>
         </div>
-      </div>
     );
   }
 }
