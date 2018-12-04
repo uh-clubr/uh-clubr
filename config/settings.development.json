@@ -54,6 +54,10 @@
       "rio_twitter": "",
       "image": "http://www.ics.hawaii.edu/wp-content/uploads/2013/08/small-greyhats-teamSpr2011.jpg",
       "description": "The Grey Hats is a student-led, extracurricular organization focused on real-world training for cyber defense. Membership gives students an outstanding opportunity to learn and apply critical skills, attack and defend systems, and to network with others interested in modern security issues.",
+      "addedQuestion1": "We could not live without...",
+      "addedAnswer1": "energy drinks, gummy bears and code",
+      "addedQuestion2": "If we had a million dollars, we would...",
+      "addedAnswer2": "found a cyber defense startup",
       "owner": "admin@foo.com"
     },
     {
@@ -68,7 +72,9 @@
       "rio_twitter": "",
       "image": "http://travel2change.org/wp-content/uploads/2017/11/change.png",
       "description": "We all love to travel. But let’s face it—travel can create social and environmental problems. At travel2change we believe that by exploring the world, we can better it. Discover fun and impactful activities offered by local communities. Together we can transform tourism so that local communities benefit.  travel2change is a Hawaii based 501(c)(3) nonprofit organization.",
-      "owner": "admin@foo.com"
+      "addedQuestion1": "If we had a million dollars, we would...",
+      "addedAnswer1": "go global with our organization and implement our model to help developing nations all over the world",
+      "owner": "admin@foo.com",
     }
   ]
 }

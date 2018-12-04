@@ -23,6 +23,67 @@ const ClubSchema = new SimpleSchema({
   image: String,
   description: String,
   owner: String,
+  addedQuestion1: {
+    type: String,
+    allowedValues: [
+      'If we had a million dollars, we would...',
+      'On a Friday afternoon, you would find us...',
+      'On a weekend, you would find us...',
+      'You would probably find us talking about...',
+      'If you come to our meetings, you get free...',
+      'Favorite quote:',
+      '3 words to describe us are...',
+      'We could not live without...',
+      'What we love the most about our club is...',
+    ],
+    optional: true,
+  },
+  addedAnswer1: {
+    type: String,
+    optional: true,
+  },
+  addedQuestion2: {
+    type: String,
+    allowedValues: [
+      'We would get along if you…',
+      'If we had a million dollars, we would…',
+      'After class you would find us…',
+      'On a Friday afternoon, you would find us…',
+      'On a weekend, you would find us…',
+      'You would probably find us talking about...',
+      'If you come to our meetings, you get free...',
+      'Favorite quote:',
+      '3 words to describe us are...',
+      'We could not live without...',
+      'What we love the most about our club is...',
+    ],
+    optional: true,
+  },
+  addedAnswer2: {
+    type: String,
+    optional: true,
+  },
+  addedQuestion3: {
+    type: String,
+    allowedValues: [
+      'We would get along if you…',
+      'If we had a million dollars, we would…',
+      'After class you would find us…',
+      'On a Friday afternoon, you would find us…',
+      'On a weekend, you would find us…',
+      'You would probably find us talking about...',
+      'If you come to our meetings, you get free...',
+      'Favorite quote:',
+      '3 words to describe us are...',
+      'We could not live without...',
+      'What we love the most about our club is...',
+    ],
+    optional: true,
+  },
+  addedAnswer3: {
+    type: String,
+    optional: true,
+  },
 }, { tracker: Tracker });
 
 /** Attach this schema to the collection. */
