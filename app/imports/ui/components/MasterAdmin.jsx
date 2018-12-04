@@ -2,10 +2,11 @@ import React from 'react';
 import { Card, Image, Icon, Button } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { withRouter, Link } from 'react-router-dom';
+import { Clubs } from '/imports/api/club/club';
 import { Bert } from 'meteor/themeteorchef:bert';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
-class Club extends React.Component {
+class MasterAdmin extends React.Component {
   constructor(props) {
     super(props);
     this.onClick = this.onClick.bind(this);
@@ -13,11 +14,7 @@ class Club extends React.Component {
   }
 
   onClick() {
-    /* eslint-disable-next-line */
-    const text = confirm('Do you really want to delete this contact?');
-    if (text === true) {
-      Club.remove(this.props.club._id, this.deleteCallback);
-    }
+      Clubs.remove(this.props.club._id, this.deleteCallback);
   }
 
   deleteCallback(error) {
@@ -70,9 +67,9 @@ class Club extends React.Component {
 }
 
 /** Require a document to be passed to this component. */
-Club.propTypes = {
+MasterAdmin.propTypes = {
   club: PropTypes.object.isRequired,
 };
 
 /** Wrap this component in withRouter since we use the <Link> React Router element. */
-export default withRouter(Club);
+export default withRouter(MasterAdmin);
