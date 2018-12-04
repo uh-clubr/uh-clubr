@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 import React from 'react';
-import {Grid, Header, Image, Icon, Segment, Form, Message} from 'semantic-ui-react';
-import { Link, withRouter } from 'react-router-dom';
+import { Grid, Header, Image, Icon, Segment, Form, Message } from 'semantic-ui-react';
+import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { withTracker } from 'meteor/react-meteor-data';
 import { Meteor } from 'meteor/meteor';
@@ -12,7 +12,7 @@ class LandingOne extends React.Component {
     /** Initialize state fields. */
     constructor(props) {
         super(props);
-        this.state = { email: '', password: '', error: '' };
+        this.state = { email: '', password: '', error: '', signed: false };
         // Ensure that 'this' is bound to this component in these two functions.
         // https://medium.freecodecamp.org/react-binding-patterns-5-approaches-for-handling-this-92c651b5af56
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -30,13 +30,14 @@ class LandingOne extends React.Component {
         Accounts.createUser({ email, username: email, password }, (err) => {
             if (err) {
                 this.setState({ error: err.reason });
-            } else {
-                this.props.history.push('/login');
+                } else {
+                this.setState({ signed: true });
             }
         });
     }
 
     render() {
+      // if correct authentication, redirect to page instead of login screen
         return (
             <div className='landing-background'>
               <div className='landing-grid-style'>
@@ -64,7 +65,7 @@ class LandingOne extends React.Component {
                             </Header>
                         </Grid.Column>
                         <Grid.Column>
-                            {this.props.currentUser ? '' :
+                            {(this.state.signed) || (this.props.currentUser) ? '' :
                                 <Segment>
                                     <Header>
                                         <Icon fitted name='user circle outline'/>
