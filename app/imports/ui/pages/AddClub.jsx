@@ -76,6 +76,7 @@ class AddClub extends React.Component {
                 <TextField name='addedAnswer2'/>
                 <SelectField name='addedQuestion3'/>
                 <TextField name='addedAnswer3'/>
+                <TextField name='meetingTimesInfo'/>
                 <ErrorsField/>
                 <HiddenField name='owner' value='fakeuser@foo.com'/>
                 <Button><Link to={'/addclub2'}>Next</Link></Button>
