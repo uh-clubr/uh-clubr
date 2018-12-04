@@ -26,7 +26,9 @@ const ClubSchema = new SimpleSchema({
   addedQuestion1: {
     type: String,
     allowedValues: [
+      'We would get along if you...',
       'If we had a million dollars, we would...',
+      'After class you would find us...',
       'On a Friday afternoon, you would find us...',
       'On a weekend, you would find us...',
       'You would probably find us talking about...',
