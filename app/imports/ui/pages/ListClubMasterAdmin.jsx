@@ -22,10 +22,16 @@ class ListClubMasterAdmin extends React.Component {
       flex: '1',
     };
     return (
+<<<<<<< HEAD
         <div style={landingbg}>
         <div className='club-master-admin'>
          <Container>
             <Header as="h2" textAlign="center" inverted>Club List</Header>
+=======
+        <div className='landing-background'>
+         <Container>
+            <Header as="h2" textAlign="center" className='header-style'>Club List</Header>
+>>>>>>> dev
             <Card.Group centered>
               {this.props.clubs.map((club, index) => <MasterAdmin key={index} club={club}/>)}
             </Card.Group>

@@ -48,6 +48,7 @@ class AddClub extends React.Component {
       marginBottom: '20px',
     };
     return (
+<<<<<<< HEAD
         <div className='add-club'>
           <div style={stepStyle}>
             <Step.Group ordered>
@@ -65,9 +66,12 @@ class AddClub extends React.Component {
               </Step>
             </Step.Group>
           </div>
+=======
+        <div className='landing-background'>
+>>>>>>> dev
         <Grid container centered>
           <Grid.Column>
-            <Header as="h2" textAlign="center">Add Club</Header>
+            <Header as="h2" textAlign="center" className='header-style'>Add Club</Header>
             <AutoForm ref={(ref) => { this.formRef = ref; }} schema={ClubSchema} onSubmit={this.submit}>
               <Segment>
                 <TextField name='name'/>
