@@ -77,6 +77,11 @@
   font-family: Helvetica, serif;
 }
 
+.list-clubs-header-style {
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
 .user {
   font-family: Helvetica, serif;
 }
