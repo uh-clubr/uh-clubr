@@ -1,9 +1,9 @@
 import React from 'react';
 import { Clubs, ClubSchema } from '/imports/api/club/club';
-import { Grid, Header, Segment, Step, Button } from 'semantic-ui-react';
+import { Button, Grid, Header, Segment, Step } from 'semantic-ui-react';
 import AutoForm from 'uniforms-semantic/AutoForm';
 import TextField from 'uniforms-semantic/TextField';
-import LongTextField from 'uniforms-semantic/LongTextField';
+import SelectField from 'uniforms-semantic/SelectField';
 import HiddenField from 'uniforms-semantic/HiddenField';
 import ErrorsField from 'uniforms-semantic/ErrorsField';
 import { Bert } from 'meteor/themeteorchef:bert';
@@ -53,14 +53,14 @@ class AddClub extends React.Component {
             <Step.Group ordered>
               <Step active>
                 <Step.Content>
-                  <Step.Title>Add Basic Info</Step.Title>
-                  <Step.Description>Add the necessary information about the club.</Step.Description>
+                  <Step.Title>What best describes you?</Step.Title>
+                  <Step.Description>Add fun questions for possible future clubrs to see!</Step.Description>
                 </Step.Content>
               </Step>
 
               <Step disabled>
                 <Step.Content>
-                  <Step.Title>Add More Info</Step.Title>
+                  <Step.Title>Add Necessary Information</Step.Title>
                 </Step.Content>
               </Step>
             </Step.Group>
@@ -68,19 +68,14 @@ class AddClub extends React.Component {
         <Grid container centered>
           <Grid.Column>
             <Header as="h2" textAlign="center" className='header-style'>Add Club</Header>
-            <AutoForm ref={(ref) => { this.formRef = ref; }} schema={ClubSchema} onSubmit={this.submit}>
+            <AutoForm ref={(ref) => { this.formRef = ref; }} schema={ClubSchema}>
               <Segment>
-                <TextField name='name'/>
-                <TextField name='type'/>
-                <TextField name='contact_person'/>
-                <TextField name='contact_email'/>
-                <TextField name='rio_email'/>
-                <TextField name='rio_website'/>
-                <TextField name='rio_facebook'/>
-                <TextField name='rio_instagram'/>
-                <TextField name='rio_twitter'/>
-                <TextField name='image'/>
-                <LongTextField name='description'/>
+                <SelectField name='addedQuestion1'/>
+                <TextField name='addedAnswer1'/>
+                <SelectField name='addedQuestion2'/>
+                <TextField name='addedAnswer2'/>
+                <SelectField name='addedQuestion3'/>
+                <TextField name='addedAnswer3'/>
                 <ErrorsField/>
                 <HiddenField name='owner' value='fakeuser@foo.com'/>
                 <Button><Link to={'/addclub2'}>Next</Link></Button>
