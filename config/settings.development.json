@@ -75,5 +75,17 @@
       "addedAnswer1": "Go global with our organization and implement our model to help developing nations all over the world.",
       "owner": "admin@foo.com"
     }
-  ]
+  ],
+  "defaultProfile": [
+
+  {
+    "name": "Name",
+    "interest": "None",
+    "major": "Major",
+    "email": "Email",
+    "bio": "Bio",
+    "image": "https://www.what-dog.net/Images/faces2/scroll001.jpg",
+    "owner": "admin@foo.com"
+  }
+    ]
 }
