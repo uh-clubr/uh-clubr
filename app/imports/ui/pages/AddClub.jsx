@@ -43,10 +43,10 @@ class AddClub extends React.Component {
   /** Render the form. Use Uniforms: https://github.com/vazco/uniforms */
   render() {
     return (
-        <div className='add-club'>
+        <div className='landing-background'>
         <Grid container centered>
           <Grid.Column>
-            <Header as="h2" textAlign="center">Add Club</Header>
+            <Header as="h2" textAlign="center" className='header-style'>Add Club</Header>
             <AutoForm ref={(ref) => { this.formRef = ref; }} schema={ClubSchema} onSubmit={this.submit}>
               <Segment>
                 <TextField name='name'/>

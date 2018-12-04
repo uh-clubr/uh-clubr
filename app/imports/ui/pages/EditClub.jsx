@@ -33,10 +33,10 @@ class EditClub extends React.Component {
   /** Render the form. Use Uniforms: https://github.com/vazco/uniforms */
   renderPage() {
     return (
-        <div className='edit-club'>
+        <div className='landing-background'>
         <Grid container centered>
           <Grid.Column>
-            <Header as="h2" textAlign="center">Edit Club</Header>
+            <Header as="h2" textAlign="center" className='header-style'>Edit Club</Header>
             <AutoForm schema={ClubSchema} onSubmit={this.submit} model={this.props.doc}>
               <Segment>
                 <TextField name='name'/>
