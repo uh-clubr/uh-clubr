@@ -43,13 +43,12 @@ class AddClub extends React.Component {
   /** Render the form. Use Uniforms: https://github.com/vazco/uniforms */
   render() {
     const stepStyle = {
-      marginTop: '20px',
+      paddingTop: '30px',
       marginLeft: '200px',
       marginBottom: '20px',
     };
     return (
-<<<<<<< HEAD
-        <div className='add-club'>
+        <div className='landing-background'>
           <div style={stepStyle}>
             <Step.Group ordered>
               <Step active>
@@ -66,9 +65,6 @@ class AddClub extends React.Component {
               </Step>
             </Step.Group>
           </div>
-=======
-        <div className='landing-background'>
->>>>>>> dev
         <Grid container centered>
           <Grid.Column>
             <Header as="h2" textAlign="center" className='header-style'>Add Club</Header>
