@@ -32,6 +32,11 @@ class Club extends React.Component {
       fontWeight: 'normal',
       fontSize: '1em',
     };
+    const socialMedia = {
+      color: 'rgba(32,79,50,0.4)',
+      fontWeight: 'normal',
+      fontSize: '1em',
+    };
     return (
         <Card fluid>
           <Card.Content floated='left'>
@@ -99,7 +104,45 @@ class Club extends React.Component {
                         <Icon name='angle down'/>
                       </Button>
                     }>
-                  <Modal.Header style={modalHeader} as='h1'>{this.props.club.name}</Modal.Header>
+                  <Modal.Header style={modalHeader} as='h1'>
+                    {this.props.club.name}
+                    <Container textAlign='right'>
+                      {this.props.club.rio_website
+                          ? <a href={this.props.club.rio_website}>
+                            <Icon name='desktop' color='grey'/>
+                          </a>
+                          : ''}
+                      {this.props.club.rio_email
+                          ? <a href={this.props.club.rio_email}>
+                            <Icon name='envelope outline' color='grey'/>
+                          </a>
+                          : ''}
+                      {this.props.club.contact_email
+                          ? <a href={this.props.club.contact_email} color='grey'>
+                            <Popup
+                                trigger={<Icon name='address card outline' color='grey'/>}
+                                size='tiny'>
+                              {this.props.club.contact_person}
+                            </Popup>
+                          </a>
+                          : ''}
+                      {this.props.club.rio_facebook
+                          ? <a href={this.props.club.rio_facebook}>
+                            <Icon name='facebook' color='grey'/>
+                          </a>
+                          : ''}
+                      {this.props.club.rio_instagram
+                          ? <a href={this.props.club.rio_instagram}>
+                            <Icon name='instagram' color='grey'/>
+                          </a>
+                          : ''}
+                      {this.props.club.rio_twitter
+                          ? <a href={this.props.club.rio_twitter}>
+                            <Icon name='twitter' color='grey'/>
+                          </a>
+                          : ''}
+                    </Container>
+                    </Modal.Header>
                   <Modal.Content scrolling style={modalContent}>
                     <Image src={this.props.club.image} fluid/>
                     <Modal.Description style={modalInfo}>
@@ -108,32 +151,40 @@ class Club extends React.Component {
                         {this.props.club.description}
                       </p>
                     </Modal.Description>
-                    <Image src={this.props.club.image} fluid/>
-                    <Modal.Description style={modalInfo}>
-                      <Header style={modalQuestionHeader}>We would get along if you...</Header>
-                      <p style={descStyle}>
-                        Example: answer here
-                      </p>
-                    </Modal.Description>
-                    <Image src={this.props.club.image} fluid/>
-                    <Modal.Description style={modalInfo}>
-                      <Header style={modalQuestionHeader}>If we had a million dollars, we would...</Header>
-                      <p style={descStyle}>
-                        Example: Invest
-                      </p>
-                    </Modal.Description>
-                    <Modal.Description style={modalInfo}>
-                      <Header style={modalQuestionHeader}>After class you would probably find us...</Header>
-                      <p style={descStyle}>
-                        Example: Invest
-                      </p>
-                    </Modal.Description>
+                    {this.props.club.addedQuestion1
+                        ? <Modal.Description style={modalInfo}>
+                          <Header style={modalQuestionHeader}>{this.props.club.addedQuestion1}</Header>
+                          <p style={descStyle}>
+                            {this.props.club.addedAnswer1}
+                          </p>
+                        </Modal.Description>
+                        : ''}
+                    {this.props.club.image2
+                        ? <Image src={this.props.club.image2} fluid/>
+                        : ''}
+                    {this.props.club.addedQuestion2
+                        ? <Modal.Description style={modalInfo}>
+                          <Header style={modalQuestionHeader}>{this.props.club.addedQuestion2}</Header>
+                          <p style={descStyle}>
+                            {this.props.club.addedAnswer2}
+                          </p>
+                        </Modal.Description>
+                        : ''}
+                    {this.props.club.image3
+                        ? <Image src={this.props.club.image3} fluid/>
+                        : ''}
+                    {this.props.club.addedQuestion3
+                        ? <Modal.Description style={modalInfo}>
+                          <Header style={modalQuestionHeader}>{this.props.club.addedQuestion3}</Header>
+                          <p style={descStyle}>
+                            {this.props.club.addedAnswer3}
+                          </p>
+                        </Modal.Description>
+                        : ''}
                     <Modal.Description style={modalInfo}>
                       <Header style={modalQuestionHeader}>Meet us!</Header>
                       <p style={descStyle}>
-                        Example:
-                        M 3:30-4:00
-                        T 4:30-5:00
+                        {this.props.club.meetingTimesInfo}
                       </p>
                     </Modal.Description>
                   </Modal.Content>
