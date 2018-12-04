@@ -71,7 +71,7 @@ class ListClubs extends React.Component {
         <div className='landing-background'>
           <div className='list-clubs'>
             <Container>
-              <Header as="h1" textAlign="center" inverted className='header-style'>Club Directory</Header>
+              <Header as="h1" textAlign="center" className='header-style'>Club Directory</Header>
               <Segment>
               <p>Select a filter from the options below.</p>
               </Segment>

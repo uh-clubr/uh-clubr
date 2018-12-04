@@ -52,10 +52,10 @@ class LandingOne extends React.Component {
                     </Grid.Row>
                     <Grid.Row>
                         <Grid.Column>
-                            <Header className='landing-header-style'>
+                            <Header className='landing-header-styletwo'>
                                 What we can do for you
                               <hr/>
-                                <Header.Subheader className='landing-header-style'>
+                                <Header.Subheader className='landing-header-styletwo'>
                                     Here at Clubr, we have a directory of registered and unregistered clubs.
                                     As a user, you can find a club that matches your interests and find their contact
                                     information through our club list directory.

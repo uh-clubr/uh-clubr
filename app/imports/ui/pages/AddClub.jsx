@@ -46,7 +46,7 @@ class AddClub extends React.Component {
         <div className='landing-background'>
         <Grid container centered>
           <Grid.Column>
-            <Header as="h2" textAlign="center" inverted className='header-style'>Add Club</Header>
+            <Header as="h2" textAlign="center" className='header-style'>Add Club</Header>
             <AutoForm ref={(ref) => { this.formRef = ref; }} schema={ClubSchema} onSubmit={this.submit}>
               <Segment>
                 <TextField name='name'/>
