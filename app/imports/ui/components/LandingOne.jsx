@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 import React from 'react';
-import { Grid, Header, Image, Icon, Segment, Form, Message } from 'semantic-ui-react';
+import { Grid, Header, Image, Icon, Segment, Form, Message, Checkbox } from 'semantic-ui-react';
 import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { withTracker } from 'meteor/react-meteor-data';
@@ -93,6 +93,9 @@ class LandingOne extends React.Component {
                                 onChange={this.handleChange}
                             />
                             <Form.Button content="Submit"/>
+                            <Form.Field>
+                              <Checkbox label='Email me when new clubs get added' />
+                            </Form.Field>
                           </Segment>
                         </Form>
                         {this.state.error === '' ? (
