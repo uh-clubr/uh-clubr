@@ -1,12 +1,13 @@
 import React from 'react';
 import { Clubs, ClubSchema } from '/imports/api/club/club';
-import { Grid, Header, Segment } from 'semantic-ui-react';
+import { Grid, Message, Segment, Icon, Header } from 'semantic-ui-react';
 import AutoForm from 'uniforms-semantic/AutoForm';
 import TextField from 'uniforms-semantic/TextField';
 import LongTextField from 'uniforms-semantic/LongTextField';
-import SubmitField from 'uniforms-semantic/SubmitField';
 import HiddenField from 'uniforms-semantic/HiddenField';
+import SelectField from 'uniforms-semantic/SelectField';
 import ErrorsField from 'uniforms-semantic/ErrorsField';
+import SubmitField from 'uniforms-semantic/SubmitField';
 import { Bert } from 'meteor/themeteorchef:bert';
 import { Meteor } from 'meteor/meteor';
 
@@ -46,11 +47,11 @@ class AddClub extends React.Component {
         <div className='landing-background'>
         <Grid container centered>
           <Grid.Column>
-            <Header as="h2" textAlign="center" className='header-style'>Add Club</Header>
+            <Header as="h2" textAlign="center" className='header-style'>Add a New Club!</Header>
             <AutoForm ref={(ref) => { this.formRef = ref; }} schema={ClubSchema} onSubmit={this.submit}>
               <Segment>
                 <TextField name='name'/>
-                <TextField name='type'/>
+                <SelectField name='type'/>
                 <TextField name='contact_person'/>
                 <TextField name='contact_email'/>
                 <TextField name='rio_email'/>
@@ -65,6 +66,10 @@ class AddClub extends React.Component {
                 <HiddenField name='owner' value='fakeuser@foo.com'/>
               </Segment>
             </AutoForm>
+            <Message attached='bottom' warning>
+              <Icon name='info' />
+              To get noticed by future clubrs, go to the Edit page later to add more information!
+            </Message>
           </Grid.Column>
         </Grid>
       </div>

@@ -72,10 +72,8 @@ class ListClubs extends React.Component {
           <div className='list-clubs'>
             <Container>
               <Header as="h1" textAlign="center" className='header-style'>Club Directory</Header>
-              <Segment>
-              <p>Select a filter from the options below.</p>
-              </Segment>
-              <Dropdown selection defaultValue={'none'} onChange={(event, data) => this.handleChange(event, data)} options={this.ClubTypes} fluid/>
+              <Header as="h1" className='list-clubs-header'>Filters</Header>
+              <Dropdown selection defaultValue={'none'} onChange={(event, data) => this.handleChange(event, data)} options={this.ClubTypes} className='list-clubs-dropdown'/>
               <Card.Group centered>
                 {clubs.map((club, index) => <Club key={index} club={club}/>)}
               </Card.Group>
