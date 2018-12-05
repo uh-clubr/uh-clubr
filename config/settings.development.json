@@ -54,7 +54,9 @@
       "addedQuestion1": "We could not live without...",
       "addedAnswer1": "Energy drinks, gummy bears and code.",
       "addedQuestion2": "If we had a million dollars, we would...",
-      "addedAnswer2": "Found a cyber defense startup.",
+      "addedAnswer2": "Found a startup.",
+      "addedQuestion3": "We would get along if you...",
+      "addedAnswer3": "Are interested in making 6 figures after graduation.",
       "meetingTimesInfo": "Every Wednesday at 6:30PM at the ICS Lab",
       "owner": "admin@foo.com"
     },
@@ -73,6 +75,10 @@
       "description": "We all love to travel. But let’s face it—travel can create social and environmental problems. At travel2change we believe that by exploring the world, we can better it. Discover fun and impactful activities offered by local communities. Together we can transform tourism so that local communities benefit.  travel2change is a Hawaii based 501(c)(3) nonprofit organization.",
       "addedQuestion1": "If we had a million dollars, we would...",
       "addedAnswer1": "Go global with our organization and implement our model to help developing nations all over the world.",
+      "addedQuestion2": "We would get along if you...",
+      "addedAnswer2": "Want the true kamaaina experience doing outdoor activities while also giving back to the aina.",
+      "addedQuestion3": "If you come to our meetings, you get free...",
+      "addedAnswer3": "Kayaking and yoga experiences if you volunteer!",
       "owner": "admin@foo.com"
     }
   ],
