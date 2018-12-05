@@ -18,12 +18,14 @@ class ListClubAdmin extends React.Component {
   renderPage() {
     return (
         <div className='club-admin'>
+        <div className='landing-background'>
           <Container>
-            <Header as="h2" textAlign="center">Club List</Header>
+            <Header as="h2" textAlign="center" className='header-style'>Club List</Header>
             <Card.Group centered>
               {this.props.clubs.map((club, index) => <ClubAdmin key={index} club={club}/>)}
             </Card.Group>
           </Container>
+        </div>
         </div>
     );
   }

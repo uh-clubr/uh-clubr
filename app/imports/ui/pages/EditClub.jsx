@@ -7,6 +7,7 @@ import TextField from 'uniforms-semantic/TextField';
 import LongTextField from 'uniforms-semantic/LongTextField';
 import SubmitField from 'uniforms-semantic/SubmitField';
 import HiddenField from 'uniforms-semantic/HiddenField';
+import SelectField from 'uniforms-semantic/SelectField';
 import ErrorsField from 'uniforms-semantic/ErrorsField';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
@@ -17,8 +18,12 @@ class EditClub extends React.Component {
 
   /** On successful submit, insert the data. */
   submit(data) {
-    const { name, quantity, condition, _id } = data;
-    Clubs.update(_id, { $set: { name, quantity, condition } }, (error) => (error ?
+    const { name, type, contact_person, contact_email, rio_email, rio_website, rio_facebook, rio_instagram,
+      rio_twitter, image, description, image2, image3, addedQuestion1, addedAnswer1, addedQuestion2, addedAnswer2,
+      addedQuestion3, addedAnswer3, meetingTimesInfo, _id } = data;
+    Clubs.update(_id, { $set: { name, type, contact_person, contact_email, rio_email, rio_website, rio_facebook,
+        rio_instagram, rio_twitter, image, description, image2, image3, addedQuestion1, addedAnswer1, addedQuestion2,
+        addedAnswer2, addedQuestion3, addedAnswer3, meetingTimesInfo } }, (error) => (error ?
         Bert.alert({ type: 'danger', message: `Update failed: ${error.message}` }) :
         Bert.alert({ type: 'success', message: 'Update succeeded' })));
   }
@@ -31,10 +36,10 @@ class EditClub extends React.Component {
   /** Render the form. Use Uniforms: https://github.com/vazco/uniforms */
   renderPage() {
     return (
-        <div className='edit-club'>
+        <div className='landing-background'>
         <Grid container centered>
           <Grid.Column>
-            <Header as="h2" textAlign="center">Edit Club</Header>
+            <Header as="h2" textAlign="center" className='header-style'>Edit Your Club!</Header>
             <AutoForm schema={ClubSchema} onSubmit={this.submit} model={this.props.doc}>
               <Segment>
                 <TextField name='name'/>
@@ -47,7 +52,16 @@ class EditClub extends React.Component {
                 <TextField name='rio_instagram'/>
                 <TextField name='rio_twitter'/>
                 <TextField name='image'/>
+                <TextField name='image2'/>
+                <TextField name='image3'/>
                 <LongTextField name='description'/>
+                <SelectField name='addedQuestion1'/>
+                <TextField name='addedAnswer1'/>
+                <SelectField name='addedQuestion2'/>
+                <TextField name='addedAnswer2'/>
+                <SelectField name='addedQuestion3'/>
+                <TextField name='addedAnswer3'/>
+                <TextField name='meetingTimesInfo'/>
                 <SubmitField value='Submit'/>
                 <ErrorsField/>
                 <HiddenField name='owner' />

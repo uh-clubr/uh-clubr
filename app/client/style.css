@@ -4,6 +4,19 @@
   color: #FFFFFF;
 }
 
+.header-style {
+  padding-top: 20px !important;
+  padding-bottom: 10px !important;
+  font-size: 30px !important;
+  font-family: Lora, serif !important;
+  color: white !important;
+  text-shadow:
+      -1px -1px 0 #000,
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+      1px 1px 0 #000;
+}
+
 .landing-grid-style {
   margin-top: 14px;
 }
@@ -19,6 +32,25 @@
   margin-top: 25px !important;
   color: white !important;
   font-weight: bold !important;
+  font-size: 35px !important;
+  font-family: Tangerine, cursive !important;
+  text-shadow:
+      -1px -1px 0 #000,
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+      1px 1px 0 #000;
+}
+
+.landing-header-styletwo {
+  margin-top: 25px !important;
+  color: white !important;
+  font-size: 20px !important;
+  font-family: "Times New Roman", serif !important;
+  text-shadow:
+      -1px -1px 0 #000,
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+      1px 1px 0 #000;
 }
 
 .landing-logo-style {
@@ -30,7 +62,7 @@
   background-color: black !important;
   padding-bottom: 10px !important;
   font-size: 20px !important;
-  font-family: Helvetica, serif !important;
+  font-family: Lora, serif !important;
   margin-left: 0 !important;
   box-shadow: none !important;
 }
@@ -55,6 +87,7 @@
 
 .footer-contact-style {
   color: #FFFFFF;
+  font-family: Lora, serif !important;
 }
 
 .add-club {
@@ -66,15 +99,31 @@
 }
 
 .club-admin {
-  font-family: Helvetica, serif;
+  font-family: Lora, serif;
 }
 
 .club-master-admin {
-  font-family: Helvetica, serif;
+  font-family: Lora, serif;
 }
 
 .list-clubs {
-  font-family: Helvetica, serif;
+  font-family: Lora, serif;
+}
+
+.list-clubs-dropdown {
+  margin-bottom: 20px;
+}
+
+.list-clubs-header {
+  padding-top: 20px !important;
+  font-size: 18px !important;
+  font-family: Lora, serif !important;
+  color: white !important;
+  text-shadow:
+      -1px -1px 0 #000,
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+      1px 1px 0 #000;
 }
 
 .user {

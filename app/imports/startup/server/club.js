@@ -10,7 +10,7 @@ function addData(data) {
 
 /** Initialize the collection if empty. */
 if (Clubs.find().count() === 0) {
-  if (Meteor.settings.defaultData) {
+  if (Meteor.settings.defaultClubs) {
     console.log('Creating default clubs.');
     Meteor.settings.defaultClubs.map(data => addData(data));
   }
