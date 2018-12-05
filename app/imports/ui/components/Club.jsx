@@ -44,6 +44,7 @@ class Club extends React.Component {
       fontSize: '1em',
       marginBottom: '0px',
       fontWeight: 'normal',
+      color: 'rgb(255,255,255)',
     };
     return (
         <Card fluid>
@@ -179,24 +180,26 @@ class Club extends React.Component {
                             </Grid.Column>
                             <Grid.Column>
                               {this.props.club.rio_website
-                                  ? <div>Visit our <a href={this.props.club.rio_website} color='grey'>website</a>!</div>
+                                  ? <div color='black'>Visit our
+                                    <a href={this.props.club.rio_website}> website</a>
+                                    !</div>
                                   : ''}
                               {this.props.club.rio_facebook
                                   ? <div>
-                                    <a href={this.props.club.rio_facebook}>
+                                    <a href={this.props.club.rio_facebook} color='white'>
                                       <Icon name='facebook' color='white'/>
                                       {this.props.club.name}
                                     </a>
                                   </div>
                                   : ''}
                               {this.props.club.rio_instagram
-                                  ? <div><a href={this.props.club.rio_instagram}>
+                                  ? <div><a href={this.props.club.rio_instagram} color='white'>
                                     <Icon name='instagram' color='white'/>
                                     {this.props.club.name}
                                   </a></div>
                                   : ''}
                               {this.props.club.rio_twitter
-                                  ? <div><a href={this.props.club.rio_twitter}>
+                                  ? <div><a href={this.props.club.rio_twitter} color='white'>
                                     <Icon name='twitter' color='white'/>
                                     {this.props.club.name}
                                   </a></div>
