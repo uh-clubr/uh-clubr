@@ -1,6 +1,6 @@
 import React from 'react';
-import { Clubs, ClubSchema } from '/imports/api/club/club';
-import { Grid, Message, Segment, Icon, Header } from 'semantic-ui-react';
+import { Profiles, ProfileSchema } from '/imports/api/profile/profile';
+import { Grid, Segment, Header } from 'semantic-ui-react';
 import AutoForm from 'uniforms-semantic/AutoForm';
 import TextField from 'uniforms-semantic/TextField';
 import LongTextField from 'uniforms-semantic/LongTextField';
@@ -12,7 +12,7 @@ import { Bert } from 'meteor/themeteorchef:bert';
 import { Meteor } from 'meteor/meteor';
 
 /** Renders the Page for adding a document. */
-class AddClub extends React.Component {
+class AddProfile extends React.Component {
 
   /** Bind 'this' so that a ref to the Form can be saved in formRef and communicated between render() and submit(). */
   constructor(props) {
@@ -34,11 +34,9 @@ class AddClub extends React.Component {
 
   /** On submit, insert the data. */
   submit(data) {
-    const { name, type, contact_person, contact_email, rio_email, rio_website, rio_facebook, rio_instagram,
-      rio_twitter, image, description } = data;
+    const { name, interest, major, email, bio, image } = data;
     const owner = Meteor.user().username;
-    Clubs.insert({ name, type, contact_person, contact_email, rio_email, rio_website, rio_facebook, rio_instagram,
-      rio_twitter, image, description, owner }, this.insertCallback);
+    Profiles.insert({ name, interest, major, email, bio, image, owner }, this.insertCallback);
   }
 
   /** Render the form. Use Uniforms: https://github.com/vazco/uniforms */
@@ -47,29 +45,20 @@ class AddClub extends React.Component {
         <div className='landing-background'>
         <Grid container centered>
           <Grid.Column>
-            <Header as="h2" textAlign="center" className='header-style'>Add a New Club!</Header>
-            <AutoForm ref={(ref) => { this.formRef = ref; }} schema={ClubSchema} onSubmit={this.submit}>
+            <Header as="h2" textAlign="center" className='header-style'>Create Your Profile!</Header>
+            <AutoForm ref={(ref) => { this.formRef = ref; }} schema={ProfileSchema} onSubmit={this.submit}>
               <Segment>
                 <TextField name='name'/>
-                <SelectField name='type'/>
-                <TextField name='contact_person'/>
-                <TextField name='contact_email'/>
-                <TextField name='rio_email'/>
-                <TextField name='rio_website'/>
-                <TextField name='rio_facebook'/>
-                <TextField name='rio_instagram'/>
-                <TextField name='rio_twitter'/>
+                <SelectField name='interest'/>
+                <TextField name='major'/>
+                <TextField name='email'/>
+                <LongTextField name='bio'/>
                 <TextField name='image'/>
-                <LongTextField name='description'/>
                 <SubmitField value='Submit'/>
                 <ErrorsField/>
                 <HiddenField name='owner' value='fakeuser@foo.com'/>
               </Segment>
             </AutoForm>
-            <Message attached='bottom' warning>
-              <Icon name='info' />
-              To get noticed by future clubrs, go to the Edit page later to add more information!
-            </Message>
           </Grid.Column>
         </Grid>
       </div>
@@ -77,4 +66,4 @@ class AddClub extends React.Component {
   }
 }
 
-  export default AddClub;
+  export default AddProfile;
