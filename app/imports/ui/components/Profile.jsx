@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Image } from 'semantic-ui-react';
+import { Card, Image, Button } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { withRouter, Link } from 'react-router-dom';
 
@@ -11,16 +11,17 @@ class Profile extends React.Component {
         <Card centered>
           <Image src={this.props.profile.image}/>
           <Card.Content>
-            <Card.Header>{this.props.profile.name}</Card.Header>
-            <Card.Meta>{this.props.profile.email}</Card.Meta>
-            <Card.Meta>{this.props.profile.interest}</Card.Meta>
-            <Card.Meta>{this.props.profile.major}</Card.Meta>
+            <Card.Header>Name: {this.props.profile.name}</Card.Header>
+            <Card.Meta>Email: {this.props.profile.email}</Card.Meta>
+            <Card.Meta>Interest: {this.props.profile.interest}</Card.Meta>
+            <Card.Meta>Major: {this.props.profile.major}</Card.Meta>
             <Card.Description>
-              {this.props.profile.bio}
+              Bio: {this.props.profile.bio}
             </Card.Description>
           </Card.Content>
-          <Card.Content extra>
-            <Link to={`/editprofile/${this.props.profile._id}`}>Edit</Link>
+          <Card.Content>
+            <Card.Meta>Don&apos;t like what you see? Click below to edit your profile:</Card.Meta>
+            <Button basic color='blue'><Link to={`/editprofile/${this.props.profile._id}`}>Edit</Link></Button>
           </Card.Content>
         </Card>
     );
