@@ -1,6 +1,6 @@
 import React from 'react';
 import { Grid, Loader, Header, Segment } from 'semantic-ui-react';
-import { Clubs, ClubSchema } from '/imports/api/club/club';
+import { Profiles, ProfileSchema } from '/imports/api/profile/profile';
 import { Bert } from 'meteor/themeteorchef:bert';
 import AutoForm from 'uniforms-semantic/AutoForm';
 import TextField from 'uniforms-semantic/TextField';
@@ -11,16 +11,15 @@ import ErrorsField from 'uniforms-semantic/ErrorsField';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
+import SelectField from 'uniforms-semantic/SelectField';
 
 /** Renders the Page for editing a single document. */
-class EditClub extends React.Component {
+class EditProfile extends React.Component {
 
   /** On successful submit, insert the data. */
   submit(data) {
-    const { name, type, contact_person, contact_email, rio_email, rio_website, rio_facebook, rio_instagram,
-      rio_twitter, image, description, _id } = data;
-    Clubs.update(_id, { $set: { name, type, contact_person, contact_email, rio_email, rio_website, rio_facebook,
-        rio_instagram, rio_twitter, image, description } }, (error) => (error ?
+    const { name, interest, major, email, bio, image, _id } = data;
+    Profiles.update(_id, { $set: { name, interest, major, email, bio, image } }, (error) => (error ?
         Bert.alert({ type: 'danger', message: `Update failed: ${error.message}` }) :
         Bert.alert({ type: 'success', message: 'Update succeeded' })));
   }
@@ -33,23 +32,18 @@ class EditClub extends React.Component {
   /** Render the form. Use Uniforms: https://github.com/vazco/uniforms */
   renderPage() {
     return (
-        <div className='landing-background'>
+        <div className='edit-club'>
         <Grid container centered>
           <Grid.Column>
-            <Header as="h2" textAlign="center" className='header-style'>Edit Club</Header>
-            <AutoForm schema={ClubSchema} onSubmit={this.submit} model={this.props.doc}>
+            <Header as="h2" textAlign="center">Edit Profile</Header>
+            <AutoForm schema={ProfileSchema} onSubmit={this.submit} model={this.props.doc}>
               <Segment>
                 <TextField name='name'/>
-                <TextField name='type'/>
-                <TextField name='contact_person'/>
-                <TextField name='contact_email'/>
-                <TextField name='rio_email'/>
-                <TextField name='rio_website'/>
-                <TextField name='rio_facebook'/>
-                <TextField name='rio_instagram'/>
-                <TextField name='rio_twitter'/>
+                <SelectField name='interest'/>
+                <TextField name='major'/>
+                <TextField name='email'/>
                 <TextField name='image'/>
-                <LongTextField name='description'/>
+                <LongTextField name='bio'/>
                 <SubmitField value='Submit'/>
                 <ErrorsField/>
                 <HiddenField name='owner' />
@@ -63,7 +57,7 @@ class EditClub extends React.Component {
 }
 
 /** Require the presence of a Stuff document in the props object. Uniforms adds 'model' to the props, which we use. */
-EditClub.propTypes = {
+EditProfile.propTypes = {
   doc: PropTypes.object,
   model: PropTypes.object,
   ready: PropTypes.bool.isRequired,
@@ -74,9 +68,9 @@ export default withTracker(({ match }) => {
   // Get the documentID from the URL field. See imports/ui/layouts/App.jsx for the route containing :_id.
   const documentId = match.params._id;
   // Get access to Stuff documents.
-  const subscription = Meteor.subscribe('Clubs');
+  const subscription = Meteor.subscribe('Profiles');
   return {
-    doc: Clubs.findOne(documentId),
+    doc: Profiles.findOne(documentId),
     ready: subscription.ready(),
   };
-})(EditClub);
+})(EditProfile);

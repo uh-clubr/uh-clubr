@@ -67,24 +67,13 @@ class ListClubs extends React.Component {
   /** Render the page once subscriptions have been received. */
   renderPage() {
     const clubs = (this.state.search === 'none') ? this.props.clubs : this.props.clubs.filter(club => club.type.indexOf(this.state.search) !== -1);
-    const landingbg = {
-      backgroundImage: 'url(/images/bg.png)',
-      backgroundSize: 'cover',
-      flex: '1',
-    };
-    const headerStyle = {
-      paddingTop: '20px',
-      paddingBottom: '10px',
-    };
     return (
-        <div style={landingbg}>
+        <div className='landing-background'>
           <div className='list-clubs'>
             <Container>
-              <Header as="h1" textAlign="center" inverted style={headerStyle}>Club Directory</Header>
-              <Segment>
-              <p>Select a filter from the options below.</p>
-              </Segment>
-              <Dropdown selection defaultValue={'none'} onChange={(event, data) => this.handleChange(event, data)} options={this.ClubTypes} fluid/>
+              <Header as="h1" textAlign="center" className='header-style'>Club Directory</Header>
+              <Header as="h1" className='list-clubs-header'>Filters</Header>
+              <Dropdown selection defaultValue={'none'} onChange={(event, data) => this.handleChange(event, data)} options={this.ClubTypes} className='list-clubs-dropdown'/>
               <Card.Group centered>
                 {clubs.map((club, index) => <Club key={index} club={club}/>)}
               </Card.Group>
