@@ -92,6 +92,24 @@
     "bio": "Bio",
     "image": "https://www.what-dog.net/Images/faces2/scroll001.jpg",
     "owner": "admin@foo.com"
-  }
+  },
+    {
+      "name": "Name",
+      "interest": "None",
+      "major": "Major",
+      "email": "Email",
+      "bio": "Bio",
+      "image": "https://www.what-dog.net/Images/faces2/scroll001.jpg",
+      "owner": "clubadmin@foo.com"
+    },
+    {
+      "name": "Name",
+      "interest": "None",
+      "major": "Major",
+      "email": "Email",
+      "bio": "Bio",
+      "image": "https://www.what-dog.net/Images/faces2/scroll001.jpg",
+      "owner": "john@foo.com"
+    }
     ]
 }

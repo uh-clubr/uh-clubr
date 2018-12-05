@@ -9,10 +9,10 @@ class Profile extends React.Component {
   render() {
     return (
         <Container>
-          <Header as='h1'>Welcome, {this.props.profile.name}!</Header>
+          <Header as='h1' className='header-style'>Welcome, {this.props.profile.name}!</Header>
           <Segment>
             <Image size='small' circular floated='left' src={this.props.profile.image}/>
-            <Header as='h3'>Clubs I'm interested in: {this.props.profile.interest}</Header>
+            <Header as='h3'>Clubs I am interested in: {this.props.profile.interest}</Header>
             <Header as='h3'>My Major is: {this.props.profile.major}</Header>
             <Header as='h3'>Email Address: {this.props.profile.email}</Header>
             <Header as='h3'>Bio: {this.props.profile.bio}</Header>
