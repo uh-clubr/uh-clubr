@@ -18,10 +18,7 @@ if (Clubs.find().count() === 0) {
 
 /** This subscription publishes only the documents associated with the logged in user */
 Meteor.publish('Clubs', function publish() {
-  if (this.userId) {
     return Clubs.find();
-  }
-  return this.ready();
 });
 
 /** This subscription publishes all documents regardless of user, but only if the logged in user is the ClubAdmin. */
