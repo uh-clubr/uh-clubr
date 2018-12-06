@@ -36,7 +36,6 @@ class LandingOne extends React.Component {
   }
 
   render() {
-
     // if correct authentication, redirect to page instead of login screen
     return (
         <div className='landing-background'>
@@ -64,7 +63,15 @@ class LandingOne extends React.Component {
                     </Header>
                 </Grid.Column>
                 <Grid.Column>
-                  {(this.state.signed) || (this.props.currentUser) ? '' :
+                  {(this.state.signed) || (this.props.currentUser) ?
+                      <Header>
+                        <Header.Subheader className='landing-quote'>"Finding a club was so easy!"</Header.Subheader>
+                        <Header.Subheader className='landing-quotetwo'>-Justin Enoki</Header.Subheader>
+                        <hr/>
+                        <Header.Subheader className='landing-quote'>"Very professional and conveys information clearly."</Header.Subheader>
+                        <Header.Subheader className='landing-quotetwo'>-Taylor Hall</Header.Subheader>
+                      </Header>
+                      :
                       <Segment>
                         <Header>
                           <Icon fitted name='user circle outline'/>
@@ -117,8 +124,8 @@ class LandingOne extends React.Component {
             </Grid>
           </div>
         </div>
-    );
-  }
+  );
+}
 }
 
 /** Declare the types of all properties. */

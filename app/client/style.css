@@ -21,6 +21,28 @@
   margin-top: 14px;
 }
 
+.landing-quote {
+  font-size: 30px !important;
+  font-weight: bold !important;
+  font-family: Lora, serif !important;
+  color: white !important;
+  text-shadow:
+      -1px -1px 0 #000,
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+      1px 1px 0 #000;
+}
+.landing-quotetwo {
+  color: white !important;
+  font-size: 20px !important;
+  font-family: "Times New Roman", serif !important;
+  text-shadow:
+      -1px -1px 0 #000,
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+      1px 1px 0 #000;
+}
+
 .landing-background {
   background: url('/images/bg.png') no-repeat center center fixed;
   background-size: cover;
@@ -59,7 +81,7 @@
 
 .nav-menu-style {
   margin-bottom: 0 !important;
-  background-color: black !important;
+  background-color: rgba(32,79,50,0.4) !important;
   padding-bottom: 10px !important;
   font-size: 20px !important;
   font-family: Lora, serif !important;
@@ -81,7 +103,7 @@
 }
 
 .footer-background {
-  background-color: #000000;
+  background-color: rgba(32,79,50,0.4);
   margin-top: 14px;
 }
 
