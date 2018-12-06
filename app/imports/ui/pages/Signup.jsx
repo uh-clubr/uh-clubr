@@ -30,6 +30,7 @@ export default class Signup extends React.Component {
         this.setState({ error: err.reason });
       } else {
         this.setState({ signed: true });
+        this.props.history.push('/addprofile');
       }
     });
   }
