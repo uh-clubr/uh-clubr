@@ -10,6 +10,7 @@ import ErrorsField from 'uniforms-semantic/ErrorsField';
 import SubmitField from 'uniforms-semantic/SubmitField';
 import { Bert } from 'meteor/themeteorchef:bert';
 import { Meteor } from 'meteor/meteor';
+import { withRouter } from 'react-router-dom';
 
 /** Renders the Page for adding a document. */
 class AddProfile extends React.Component {
@@ -29,6 +30,7 @@ class AddProfile extends React.Component {
     } else {
       Bert.alert({ type: 'success', message: 'Add succeeded' });
       this.formRef.reset();
+      this.props.history.push('/');
     }
   }
 
@@ -66,4 +68,4 @@ class AddProfile extends React.Component {
   }
 }
 
-  export default AddProfile;
+  export default withRouter(AddProfile);
