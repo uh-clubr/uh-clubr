@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { Container, Form, Grid, Header, Message, Segment } from 'semantic-ui-react';
+import { Link, Redirect } from 'react-router-dom';
+import { Container, Form, Grid, Header, Message, Segment, Checkbox } from 'semantic-ui-react';
 import { Accounts } from 'meteor/accounts-base';
 
 /**
@@ -10,7 +10,7 @@ export default class Signup extends React.Component {
   /** Initialize state fields. */
   constructor(props) {
     super(props);
-    this.state = { email: '', password: '', error: '' };
+    this.state = { email: '', password: '', error: '', signed: false };
     // Ensure that 'this' is bound to this component in these two functions.
     // https://medium.freecodecamp.org/react-binding-patterns-5-approaches-for-handling-this-92c651b5af56
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -29,18 +29,24 @@ export default class Signup extends React.Component {
       if (err) {
         this.setState({ error: err.reason });
       } else {
-        // browserHistory.push('/login');
+        this.setState({ signed: true });
+        this.props.history.push('/addprofile');
       }
     });
   }
 
   /** Display the signup form. */
   render() {
+    // if correct authentication, redirect to page instead of login screen
+    if (this.state.signed === true) {
+      return <Redirect to='/' />;
+    }
     return (
+        <div className='landing-background'>
         <Container>
           <Grid textAlign="center" verticalAlign="middle" centered columns={2}>
             <Grid.Column>
-              <Header as="h2" textAlign="center">
+              <Header as="h2" textAlign="center" className='header-style'>
                 Register your account
               </Header>
               <Form onSubmit={this.handleSubmit}>
@@ -65,6 +71,9 @@ export default class Signup extends React.Component {
                   />
                   <Form.Button content="Submit"/>
                 </Segment>
+                <Form.Field>
+                  <Checkbox label='Email me when new clubs get added' />
+                </Form.Field>
               </Form>
               <Message>
                 Already have an account? Login <Link to="/signin">here</Link>
@@ -81,6 +90,7 @@ export default class Signup extends React.Component {
             </Grid.Column>
           </Grid>
         </Container>
+        </div>
     );
   }
 }

@@ -1,0 +1,163 @@
+.content {
+  font-size: 20px;
+  font-weight: bold;
+  color: #FFFFFF;
+}
+
+.header-style {
+  padding-top: 20px !important;
+  padding-bottom: 10px !important;
+  font-size: 30px !important;
+  font-family: Lora, serif !important;
+  color: white !important;
+  text-shadow:
+      -1px -1px 0 #000,
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+      1px 1px 0 #000;
+}
+
+.landing-grid-style {
+  margin-top: 14px;
+}
+
+.landing-quote {
+  font-size: 25px !important;
+  font-weight: bold !important;
+  font-family: Lora, serif !important;
+  color: white !important;
+  text-shadow:
+      -1px -1px 0 #000,
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+      1px 1px 0 #000;
+}
+.landing-quotetwo {
+  color: white !important;
+  font-size: 20px !important;
+  font-family: "Times New Roman", serif !important;
+  text-shadow:
+      -1px -1px 0 #000,
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+      1px 1px 0 #000;
+}
+
+.landing-background {
+  background: url('/images/bg.png') no-repeat center center fixed;
+  background-size: cover;
+  flex: 1;
+  padding-bottom: 14px;
+}
+
+.landing-header-style {
+  margin-top: 25px !important;
+  color: white !important;
+  font-weight: bold !important;
+  font-size: 45px !important;
+  font-family: Tangerine, cursive !important;
+  text-shadow:
+      -1px -1px 0 #000,
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+      1px 1px 0 #000;
+}
+
+.landing-header-styletwo {
+  margin-top: 25px !important;
+  color: white !important;
+  font-size: 25px !important;
+  font-family: "Times New Roman", serif !important;
+  text-shadow:
+      -1px -1px 0 #000,
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+      1px 1px 0 #000;
+}
+
+.landing-logo-style {
+  margin: 0 !important;
+}
+
+.nav-menu-style {
+  margin-bottom: 0 !important;
+  background-color: rgba(32,79,50,0.4) !important;
+  padding-bottom: 10px !important;
+  font-size: 20px !important;
+  font-family: Lora, serif !important;
+  margin-left: 0 !important;
+  box-shadow: none !important;
+}
+
+.nav-item-style {
+  padding: 3px !important;
+  margin: 10px !important;
+}
+
+.nav-icon-margin {
+  margin: 2px !important;
+}
+
+.nav-menu-item-style {
+  padding: 10px !important;
+}
+
+.footer-background {
+  background-color: rgba(32,79,50,0.4);
+  margin-top: 14px;
+}
+
+.footer-contact-style {
+  color: #FFFFFF;
+  font-family: Lora, serif !important;
+}
+
+.add-club {
+  font-family: Helvetica, serif;
+}
+
+.edit-club {
+  font-family: Helvetica, serif;
+}
+
+.club-admin {
+  font-family: Lora, serif;
+}
+
+.club-master-admin {
+  font-family: Lora, serif;
+}
+
+.list-clubs {
+  font-family: Lora, serif;
+}
+
+.list-clubs-dropdown {
+  margin-bottom: 20px;
+  text-shadow: none;
+}
+
+.list-clubs-header {
+  padding-top: 20px !important;
+  font-size: 18px !important;
+  font-family: Lora, serif !important;
+  color: white !important;
+  text-shadow:
+      -1px -1px 0 #000,
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+      1px 1px 0 #000;
+}
+
+.user {
+  font-family: Helvetica, serif;
+}
+
+.user-image {
+  margin-top: 10px;
+  margin-bottom: 60px;
+}
+
+.user-clubs {
+  margin-bottom: 30px;
+}
