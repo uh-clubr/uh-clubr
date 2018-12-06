@@ -42,10 +42,11 @@ export default class Signup extends React.Component {
       return <Redirect to='/' />;
     }
     return (
+        <div className='landing-background'>
         <Container>
           <Grid textAlign="center" verticalAlign="middle" centered columns={2}>
             <Grid.Column>
-              <Header as="h2" textAlign="center">
+              <Header as="h2" textAlign="center" className='header-style'>
                 Register your account
               </Header>
               <Form onSubmit={this.handleSubmit}>
@@ -89,6 +90,7 @@ export default class Signup extends React.Component {
             </Grid.Column>
           </Grid>
         </Container>
+        </div>
     );
   }
 }
