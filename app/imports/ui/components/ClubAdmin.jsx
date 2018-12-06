@@ -32,11 +32,6 @@ class ClubAdmin extends React.Component {
       fontWeight: 'normal',
       fontSize: '1em',
     };
-    const socialMedia = {
-      color: 'rgba(32,79,50,0.4)',
-      fontWeight: 'normal',
-      fontSize: '1em',
-    };
     return (
         <Card fluid>
           <Card.Content floated='left'>
