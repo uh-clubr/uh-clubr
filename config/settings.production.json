@@ -59,15 +59,15 @@
 
   "defaultProfile": [
 
-    {
-      "name": "Name",
-      "interest": "None",
-      "major": "Major",
-      "email": "Email",
-      "bio": "Bio",
-      "image": "https://www.what-dog.net/Images/faces2/scroll001.jpg",
-      "owner": "admin@foo.com"
-    },
+  {
+    "name": "Name",
+    "interest": "None",
+    "major": "Major",
+    "email": "Email",
+    "bio": "Bio",
+    "image": "https://www.what-dog.net/Images/faces2/scroll001.jpg",
+    "owner": "admin@foo.com"
+  },
     {
       "name": "Name",
       "interest": "None",
@@ -86,10 +86,10 @@
       "image": "https://www.what-dog.net/Images/faces2/scroll001.jpg",
       "owner": "john@foo.com"
     }
-  ],
-"galaxy.meteor.com": {
+    ],
+  "galaxy.meteor.com": {
     "env": {
-      "MONGO_URL": "mongodb://uhclubr:uhclubr808@ds163156.mlab.com:63156/uhclubr"
+      "MONGO_URL": "mongodb://uhclubr:uhclubr808@ds155587.mlab.com:55587/uhclubr"
     }
   }
 }
