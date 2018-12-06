@@ -1,0 +1,95 @@
+{
+  "defaultAccounts": [
+    {
+      "email": "admin@foo.com",
+      "password": "changeme",
+      "role": "admin"
+    },
+    {
+      "email": "john@foo.com",
+      "password": "changeme"
+    },
+    {
+      "email": "clubadmin@foo.com",
+      "password": "changeme",
+      "role": "clubAdmin"
+    }
+  ],
+  "defaultClubs": [
+    {
+      "name": "Grey Hats at UHM",
+      "type": "Academic/Professional",
+      "contact_person": "Olivia Murray",
+      "contact_email": "omurray4@hawaii.edu",
+      "rio_email": "greyhats@hawaii.edu",
+      "rio_website": "http://uhmgreyhats.github.io",
+      "image": "http://www.ics.hawaii.edu/wp-content/uploads/2013/08/small-greyhats-teamSpr2011.jpg",
+      "description": "The Grey Hats is a student-led, extracurricular organization focused on real-world training for cyber defense. Membership gives students an outstanding opportunity to learn and apply critical skills, attack and defend systems, and to network with others interested in modern security issues.",
+      "addedQuestion1": "We could not live without...",
+      "addedAnswer1": "Energy drinks, gummy bears and code.",
+      "addedQuestion2": "If we had a million dollars, we would...",
+      "addedAnswer2": "Found a startup.",
+      "addedQuestion3": "We would get along if you...",
+      "addedAnswer3": "Are interested in making 6 figures after graduation.",
+      "meetingTimesInfo": "Every Wednesday at 6:30PM at the ICS Lab",
+      "owner": "admin@foo.com"
+    },
+    {
+      "name": "Travel2Change",
+      "type": "Student Affairs",
+      "contact_person": "Angela Ziggy Kitsou",
+      "contact_email": "angelazk@hawaii.edu",
+      "rio_email": "uhm@travel2change.org",
+      "rio_website": "travel2change.org",
+      "rio_facebook": "https://www.facebook.com/travel2change",
+      "rio_instagram": "https://www.instagram.com/travel2change/",
+      "image": "http://travel2change.org/wp-content/uploads/2017/11/change.png",
+      "image2": "https://1bo9y82e76el2rf8ms1m5i0r-wpengine.netdna-ssl.com/wp-content/uploads/2017/11/travel2change-03.jpg",
+      "image3": "https://www.gohawaii.com/sites/default/files/styles/listing_large/public/mmg_lfef_images/travel2change-99299-616e91c8752b9d53c7e51a362880dea0.jpg?itok=32ll1oNF",
+      "description": "We all love to travel. But let’s face it—travel can create social and environmental problems. At travel2change we believe that by exploring the world, we can better it. Discover fun and impactful activities offered by local communities. Together we can transform tourism so that local communities benefit.  travel2change is a Hawaii based 501(c)(3) nonprofit organization.",
+      "addedQuestion1": "If we had a million dollars, we would...",
+      "addedAnswer1": "Go global with our organization and implement our model to help developing nations all over the world.",
+      "addedQuestion2": "We would get along if you...",
+      "addedAnswer2": "Want the true kamaaina experience doing outdoor activities while also giving back to the aina.",
+      "addedQuestion3": "If you come to our meetings, you get free...",
+      "addedAnswer3": "Kayaking and yoga experiences if you volunteer!",
+      "owner": "clubadmin@foo.com"
+    }
+  ],
+
+  "defaultProfile": [
+
+    {
+      "name": "Name",
+      "interest": "None",
+      "major": "Major",
+      "email": "Email",
+      "bio": "Bio",
+      "image": "https://www.what-dog.net/Images/faces2/scroll001.jpg",
+      "owner": "admin@foo.com"
+    },
+    {
+      "name": "Name",
+      "interest": "None",
+      "major": "Major",
+      "email": "Email",
+      "bio": "Bio",
+      "image": "https://www.what-dog.net/Images/faces2/scroll001.jpg",
+      "owner": "clubadmin@foo.com"
+    },
+    {
+      "name": "Name",
+      "interest": "None",
+      "major": "Major",
+      "email": "Email",
+      "bio": "Bio",
+      "image": "https://www.what-dog.net/Images/faces2/scroll001.jpg",
+      "owner": "john@foo.com"
+    }
+  ],
+"galaxy.meteor.com": {
+    "env": {
+      "MONGO_URL": "mongodb://uhclubr:uhclubr808@ds163156.mlab.com:63156/uhclubr"
+    }
+  }
+}
