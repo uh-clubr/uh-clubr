@@ -32,28 +32,26 @@ class EditProfile extends React.Component {
   /** Render the form. Use Uniforms: https://github.com/vazco/uniforms */
   renderPage() {
     return (
-        <div className='landing-background'>
-          <div className='edit-club'>
-            <Grid container centered>
-              <Grid.Column>
-                <Header as="h2" textAlign="center" className='header-style'>Edit Profile</Header>
-                <AutoForm schema={ProfileSchema} onSubmit={this.submit} model={this.props.doc}>
-                  <Segment>
-                    <TextField name='name'/>
-                    <SelectField name='interest'/>
-                    <TextField name='major'/>
-                    <TextField name='email'/>
-                    <TextField name='image'/>
-                    <LongTextField name='bio'/>
-                    <SubmitField value='Submit'/>
-                    <ErrorsField/>
-                    <HiddenField name='owner' />
-                  </Segment>
-                </AutoForm>
-              </Grid.Column>
-            </Grid>
-          </div>
-        </div>
+        <div className='edit-club'>
+        <Grid container centered>
+          <Grid.Column>
+            <Header as="h2" textAlign="center">Edit Profile</Header>
+            <AutoForm schema={ProfileSchema} onSubmit={this.submit} model={this.props.doc}>
+              <Segment>
+                <TextField name='name'/>
+                <SelectField name='interest'/>
+                <TextField name='major'/>
+                <TextField name='email'/>
+                <TextField name='image'/>
+                <LongTextField name='bio'/>
+                <SubmitField value='Submit'/>
+                <ErrorsField/>
+                <HiddenField name='owner' />
+              </Segment>
+            </AutoForm>
+          </Grid.Column>
+        </Grid>
+      </div>
     );
   }
 }

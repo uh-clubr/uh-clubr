@@ -17,16 +17,12 @@ class UserPage extends React.Component {
   /** Render the page once subscriptions have been received. */
   renderPage() {
     return (
-        <div className='landing-background'>
-          <div className='list-clubs'>
         <Container>
-          <Header as="h2" textAlign="center" className='header-style'>Profile</Header>
-            <Card.Group className='list-clubs'>
+          <Header as="h2" textAlign="center">Profile</Header>
+            <Card.Group>
               {this.props.profile.map((profile) => <Profile key={profile._id} profile={profile} />)}
             </Card.Group>
         </Container>
-        </div>
-        </div>
     );
   }
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Image, Button } from 'semantic-ui-react';
+import { Container, Header, Image, Segment } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { withRouter, Link } from 'react-router-dom';
 
@@ -8,22 +8,17 @@ class Profile extends React.Component {
 
   render() {
     return (
-        <Card centered>
-          <Image src={this.props.profile.image}/>
-          <Card.Content>
-            <Card.Header>Name: {this.props.profile.name}</Card.Header>
-            <Card.Meta>Email: {this.props.profile.email}</Card.Meta>
-            <Card.Meta>Interest: {this.props.profile.interest}</Card.Meta>
-            <Card.Meta>Major: {this.props.profile.major}</Card.Meta>
-            <Card.Description>
-              Bio: {this.props.profile.bio}
-            </Card.Description>
-          </Card.Content>
-          <Card.Content>
-            <Card.Meta>Don&apos;t like what you see? Click below to edit your profile:</Card.Meta>
-            <Button basic color='blue'><Link to={`/editprofile/${this.props.profile._id}`}>Edit</Link></Button>
-          </Card.Content>
-        </Card>
+        <Container>
+          <Header as='h1'>Welcome, {this.props.profile.name}!</Header>
+          <Segment>
+            <Image size='small' circular floated='left' src={this.props.profile.image}/>
+            <Header as='h3'>Clubs I'm interested in: {this.props.profile.interest}</Header>
+            <Header as='h3'>My Major is: {this.props.profile.major}</Header>
+            <Header as='h3'>Email Address: {this.props.profile.email}</Header>
+            <Header as='h3'>Bio: {this.props.profile.bio}</Header>
+            <Header as='h3'><Link to={`/editprofile/${this.props.profile._id}`}>Edit</Link></Header>
+          </Segment>
+        </Container>
     );
   }
 }
