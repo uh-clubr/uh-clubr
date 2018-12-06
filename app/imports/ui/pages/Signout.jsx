@@ -17,7 +17,7 @@ export default class Signout extends React.Component {
   }
 
   componentWillMount() {
-    this.timer = setInterval(this.tick.bind(this), 100);
+    this.timer = setInterval(this.tick.bind(this), 1000);
   }
 
   componentWillUnmount() {

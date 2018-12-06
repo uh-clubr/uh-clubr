@@ -21,7 +21,6 @@ class NavBar extends React.Component {
                         <Menu.Item as={NavLink} activeClassName="active" exact to="/admin"
                                    key='admin'>Admin</Menu.Item>]
                 ) : ''}
-                {/* Checks if club admin is signed in */}
                 {Roles.userIsInRole(Meteor.userId(), 'clubAdmin') ? (
                     <Menu.Item className='nav-menu-item-style' as={NavLink} activeClassName="active" exact to="/clubadminlist"
                                key='clubadminlist'>List My Clubs</Menu.Item>
@@ -29,9 +28,7 @@ class NavBar extends React.Component {
                 {/* Checks if user is logged in to display user options */}
                 {this.props.currentUser ? (
                     [<Menu.Item as={NavLink} position="right" activeClassName="active" exact to="/list"
-                                key='list'>List Clubs</Menu.Item>,
-                      <Menu.Item as={NavLink} activeClassName="active" exact to="/user" key='user'>My Profile</Menu.Item>,
-                    ]
+                                key='list'>List Clubs</Menu.Item>]
                 ) : ''}
                 {/* Sign in if not signed in */}
                 <Menu.Item className='nav-item-style'>
