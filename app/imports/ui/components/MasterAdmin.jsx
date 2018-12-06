@@ -52,10 +52,19 @@ class MasterAdmin extends React.Component {
       fontWeight: 'normal',
       fontSize: '1em',
     };
-    const socialMedia = {
-      color: 'rgba(32,79,50,0.4)',
-      fontWeight: 'normal',
+    const contactUs = {
+      padding: '15px 25px 25px 25px',
+      backgroundColor: 'rgba(32,79,50,0.4)',
+    };
+    const contactUsHeader = {
+      color: 'rgb(32,79,50)',
+      fontSize: '1.5em',
+    };
+    const contactUsInfo = {
       fontSize: '1em',
+      marginBottom: '0px',
+      fontWeight: 'normal',
+      color: 'rgb(255,255,255)',
     };
     return (
         <Card fluid>
@@ -128,42 +137,6 @@ class MasterAdmin extends React.Component {
                     }>
                   <Modal.Header style={modalHeader} as='h1'>
                     {this.props.club.name}
-                    <Container textAlign='right'>
-                      {this.props.club.rio_website
-                          ? <a href={this.props.club.rio_website}>
-                            <Icon name='desktop' color='grey'/>
-                          </a>
-                          : ''}
-                      {this.props.club.rio_email
-                          ? <a href={this.props.club.rio_email}>
-                            <Icon name='envelope outline' color='grey'/>
-                          </a>
-                          : ''}
-                      {this.props.club.contact_email
-                          ? <a href={this.props.club.contact_email} color='grey'>
-                            <Popup
-                                trigger={<Icon name='address card outline' color='grey'/>}
-                                size='tiny'>
-                              {this.props.club.contact_person}
-                            </Popup>
-                          </a>
-                          : ''}
-                      {this.props.club.rio_facebook
-                          ? <a href={this.props.club.rio_facebook}>
-                            <Icon name='facebook' color='grey'/>
-                          </a>
-                          : ''}
-                      {this.props.club.rio_instagram
-                          ? <a href={this.props.club.rio_instagram}>
-                            <Icon name='instagram' color='grey'/>
-                          </a>
-                          : ''}
-                      {this.props.club.rio_twitter
-                          ? <a href={this.props.club.rio_twitter}>
-                            <Icon name='twitter' color='grey'/>
-                          </a>
-                          : ''}
-                    </Container>
                   </Modal.Header>
                   <Modal.Content scrolling style={modalContent}>
                     <Image src={this.props.club.image} fluid/>
@@ -203,11 +176,60 @@ class MasterAdmin extends React.Component {
                           </p>
                         </Modal.Description>
                         : ''}
-                    <Modal.Description style={modalInfo}>
-                      <Header style={modalQuestionHeader}>Meet us!</Header>
-                      <p style={descStyle}>
-                        {this.props.club.meetingTimesInfo}
-                      </p>
+                    {this.props.club.meetingTimesInfo
+                        ? <Modal.Description style={modalInfo}>
+                          <Header style={modalQuestionHeader}>Meet us!</Header>
+                          <p style={descStyle}>
+                            {this.props.club.meetingTimesInfo}
+                          </p>
+                        </Modal.Description>
+                        : ''}
+                    <Modal.Description style={contactUs}>
+                      <Header style={contactUsHeader}>{this.props.club.name}</Header>
+                      <div style={contactUsInfo}>
+                        <Grid stackable columns={2}>
+                          <Grid.Row>
+                            <Grid.Column>
+                              {this.props.club.rio_email
+                                  ? <div>Club Email: {this.props.club.rio_email}</div>
+                                  : ''}
+                              {this.props.club.contact_person
+                                  ? <div>Contact Person: {this.props.club.contact_person}</div>
+                                  : ''}
+                              {this.props.club.contact_email
+                                  ? <div>Contact Email: {this.props.club.contact_email}</div>
+                                  : ''}
+                            </Grid.Column>
+                            <Grid.Column>
+                              {this.props.club.rio_website
+                                  ? <div color='black'>Visit our
+                                    <a href={this.props.club.rio_website}> website</a>
+                                    !</div>
+                                  : ''}
+                              {this.props.club.rio_facebook
+                                  ? <div>
+                                    <a href={this.props.club.rio_facebook} color='white'>
+                                      <Icon name='facebook' color='white'/>
+                                      {this.props.club.name}
+                                    </a>
+                                  </div>
+                                  : ''}
+                              {this.props.club.rio_instagram
+                                  ? <div><a href={this.props.club.rio_instagram} color='white'>
+                                    <Icon name='instagram' color='white'/>
+                                    {this.props.club.name}
+                                  </a></div>
+                                  : ''}
+                              {this.props.club.rio_twitter
+                                  ? <div><a href={this.props.club.rio_twitter} color='white'>
+                                    <Icon name='twitter' color='white'/>
+                                    {this.props.club.name}
+                                  </a></div>
+                                  : ''}
+                            </Grid.Column>
+                          </Grid.Row>
+                        </Grid>
+                      </div>
                     </Modal.Description>
                   </Modal.Content>
                 </Modal>
