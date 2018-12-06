@@ -1,10 +1,20 @@
 {
   "defaultAccounts": [
-    { "email": "admin@foo.com", "password": "changeme", "role": "admin" },
-    { "email": "john@foo.com", "password": "changeme" },
-    { "email": "clubadmin@foo.com", "password": "changeme", "role": "clubAdmin" }
+    {
+      "email": "admin@foo.com",
+      "password": "changeme",
+      "role": "admin"
+    },
+    {
+      "email": "john@foo.com",
+      "password": "changeme"
+    },
+    {
+      "email": "clubadmin@foo.com",
+      "password": "changeme",
+      "role": "clubAdmin"
+    }
   ],
-
   "defaultClubs": [
     {
       "name": "Grey Hats at UHM",

@@ -85,7 +85,11 @@ const AdminProtectedRoute = ({ component: Component, ...rest }) => (
         }}
     />
 );
-
+/**
+ * AdminProtectedRoute (see React Router v4 sample)
+ * Checks for Meteor login and admin role before routing to the requested page, otherwise goes to signin page.
+ * @param {any} { component: Component, ...rest }
+ */
 const ClubAdminProtectedRoute = ({ component: Component, ...rest }) => (
     <Route
         {...rest}
@@ -112,6 +116,7 @@ AdminProtectedRoute.propTypes = {
   location: PropTypes.object,
 };
 
+/** Require a component and location to be passed to each ClubAdminProtectedRoute. */
 ClubAdminProtectedRoute.propTypes = {
   component: PropTypes.func.isRequired,
   location: PropTypes.object,
