@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
-import { Container, Form, Grid, Header, Message, Segment } from 'semantic-ui-react';
+import { Container, Form, Grid, Header, Message, Segment, Checkbox } from 'semantic-ui-react';
 import { Accounts } from 'meteor/accounts-base';
 
 /**
@@ -38,7 +38,7 @@ export default class Signup extends React.Component {
   render() {
     // if correct authentication, redirect to page instead of login screen
     if (this.state.signed === true) {
-      return <Redirect to='/addprofile' />;
+      return <Redirect to='/' />;
     }
     return (
         <Container>
@@ -69,6 +69,9 @@ export default class Signup extends React.Component {
                   />
                   <Form.Button content="Submit"/>
                 </Segment>
+                <Form.Field>
+                  <Checkbox label='Email me when new clubs get added' />
+                </Form.Field>
               </Form>
               <Message>
                 Already have an account? Login <Link to="/signin">here</Link>
