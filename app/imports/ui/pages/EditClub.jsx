@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 import React from 'react';
 import { Grid, Loader, Header, Segment } from 'semantic-ui-react';
 import { Clubs, ClubSchema } from '/imports/api/club/club';
@@ -17,29 +16,16 @@ import PropTypes from 'prop-types';
 /** Renders the Page for editing a single document. */
 class EditClub extends React.Component {
 
-  constructor(props) {
-    super(props);
-    this.state = { name: '', type: '', contact_person: '', contact_email: '', rio_email: '', rio_website: '', rio_facebook: '', rio_instagram: '',
-      rio_twitter: '', image: '', description: '', _id: '', success: false, count: 0,
-    };
-    this.insertCallBack = this.insertCallBack.bind(this);
-    this.submit = this.submit.bind(this);
-    this.handleChange = this.handleChange.bind(this);
-  }
-
-  /** Notify the user of the results of the submit. If successful, clear the form. */
-  insertCallBack(error) {
-    if (error) {
-      Bert.alert({ type: 'danger', message: `Add failed: ${error.message}` });
-    } else {
-      Bert.alert({ type: 'success', message: 'Add succeeded' });
-      this.formRef.reset();
-    }
-  }
-
-  handleChange(event, { name, value }) {
-    this.setState({ [name]: value });
-
+  /** On successful submit, insert the data. */
+  submit(data) {
+    const { name, type, contact_person, contact_email, rio_email, rio_website, rio_facebook, rio_instagram,
+      rio_twitter, image, description, image2, image3, addedQuestion1, addedAnswer1, addedQuestion2, addedAnswer2,
+      addedQuestion3, addedAnswer3, meetingTimesInfo, _id } = data;
+    Clubs.update(_id, { $set: { name, type, contact_person, contact_email, rio_email, rio_website, rio_facebook,
+        rio_instagram, rio_twitter, image, description, image2, image3, addedQuestion1, addedAnswer1, addedQuestion2,
+        addedAnswer2, addedQuestion3, addedAnswer3, meetingTimesInfo } }, (error) => (error ?
+        Bert.alert({ type: 'danger', message: `Update failed: ${error.message}` }) :
+        Bert.alert({ type: 'success', message: 'Update succeeded' })));
   }
 
   /** If the subscription(s) have been received, render the page, otherwise show a loading icon. */
@@ -51,39 +37,39 @@ class EditClub extends React.Component {
   renderPage() {
     return (
         <div className='landing-background'>
-        <Grid container centered>
-          <Grid.Column>
-            <Header as="h2" textAlign="center" className='header-style'>Edit Your Club!</Header>
-            <AutoForm schema={ClubSchema} onSubmit={this.submit} model={this.props.doc}>
-              <Segment>
-                <TextField name='name'/>
-                <TextField name='type'/>
-                <TextField name='contact_person'/>
-                <TextField name='contact_email'/>
-                <TextField name='rio_email'/>
-                <TextField name='rio_website'/>
-                <TextField name='rio_facebook'/>
-                <TextField name='rio_instagram'/>
-                <TextField name='rio_twitter'/>
-                <TextField name='image'/>
-                <TextField name='image2'/>
-                <TextField name='image3'/>
-                <LongTextField name='description'/>
-                <SelectField name='addedQuestion1'/>
-                <TextField name='addedAnswer1'/>
-                <SelectField name='addedQuestion2'/>
-                <TextField name='addedAnswer2'/>
-                <SelectField name='addedQuestion3'/>
-                <TextField name='addedAnswer3'/>
-                <TextField name='meetingTimesInfo'/>
-                <SubmitField value='Submit'/>
-                <ErrorsField/>
-                <HiddenField name='owner' />
-              </Segment>
-            </AutoForm>
-          </Grid.Column>
-        </Grid>
-      </div>
+          <Grid container centered>
+            <Grid.Column>
+              <Header as="h2" textAlign="center" className='header-style'>Edit Your Club!</Header>
+              <AutoForm schema={ClubSchema} onSubmit={this.submit} model={this.props.doc}>
+                <Segment>
+                  <TextField name='name'/>
+                  <TextField name='type'/>
+                  <TextField name='contact_person'/>
+                  <TextField name='contact_email'/>
+                  <TextField name='rio_email'/>
+                  <TextField name='rio_website'/>
+                  <TextField name='rio_facebook'/>
+                  <TextField name='rio_instagram'/>
+                  <TextField name='rio_twitter'/>
+                  <TextField name='image'/>
+                  <TextField name='image2'/>
+                  <TextField name='image3'/>
+                  <LongTextField name='description'/>
+                  <SelectField name='addedQuestion1'/>
+                  <TextField name='addedAnswer1'/>
+                  <SelectField name='addedQuestion2'/>
+                  <TextField name='addedAnswer2'/>
+                  <SelectField name='addedQuestion3'/>
+                  <TextField name='addedAnswer3'/>
+                  <TextField name='meetingTimesInfo'/>
+                  <SubmitField value='Submit'/>
+                  <ErrorsField/>
+                  <HiddenField name='owner' />
+                </Segment>
+              </AutoForm>
+            </Grid.Column>
+          </Grid>
+        </div>
     );
   }
 }
