@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Container, Header, Loader, Card, Dropdown, Segment } from 'semantic-ui-react';
+import { Container, Header, Loader, Card, Dropdown } from 'semantic-ui-react';
 import { Clubs } from '/imports/api/club/club';
 import Club from '/imports/ui/components/Club';
 import { withTracker } from 'meteor/react-meteor-data';
@@ -17,7 +17,6 @@ class ListClubs extends React.Component {
   }
 
   handleChange(event, data) {
-    console.log(data.value);
     this.setState({ search: data.value });
   }
 

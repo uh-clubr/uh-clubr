@@ -59,17 +59,18 @@ class LandingOne extends React.Component {
                       <hr/>
                       <Header.Subheader className='landing-header-styletwo'>
                         Just like Tinder, swipe through our complete list of clubs at the University of Hawaii at Manoa.
-                        Get to know the different clubs on campus and find your people at UH.
+                        Get to know the different clubs on campus and find your ohana.
                       </Header.Subheader>
                     </Header>
                 </Grid.Column>
                 <Grid.Column>
                   {(this.state.signed) || (this.props.currentUser) ?
-                      <Header>
-                        <Header.Subheader className='landing-quote'>"Finding a club was so easy!"</Header.Subheader>
-                        <Header.Subheader className='landing-quotetwo'>-Justin Enoki</Header.Subheader>
+                      <Header className='landing-header-styletwo'>
+                        Testimonials
                         <hr/>
-                        <Header.Subheader className='landing-quote'>"Very professional and conveys information clearly."</Header.Subheader>
+                        <Header.Subheader className='landing-quote' content='"Finding a club was so easy!"'></Header.Subheader>
+                        <Header.Subheader className='landing-quotetwo'>-Justin Enoki</Header.Subheader>
+                        <Header.Subheader className='landing-quote' content='"Very professional and conveys information clearly."'></Header.Subheader>
                         <Header.Subheader className='landing-quotetwo'>-Taylor Hall</Header.Subheader>
                       </Header>
                       :
