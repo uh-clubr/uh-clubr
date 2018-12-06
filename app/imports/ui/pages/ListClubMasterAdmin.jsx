@@ -17,7 +17,6 @@ class ListClubMasterAdmin extends React.Component {
   /** Render the page once subscriptions have been received. */
   renderPage() {
     return (
-        <div className='club-master-admin'>
         <div className='landing-background'>
          <Container>
             <Header as="h2" textAlign="center" className='header-style'>Club List</Header>
@@ -25,7 +24,6 @@ class ListClubMasterAdmin extends React.Component {
               {this.props.clubs.map((club, index) => <MasterAdmin key={index} club={club}/>)}
             </Card.Group>
           </Container>
-        </div>
         </div>
     );
   }

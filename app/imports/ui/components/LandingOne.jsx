@@ -1,40 +1,41 @@
 /* eslint-disable max-len */
 import React from 'react';
-import { Grid, Header, Image, Icon, Segment, Form, Message, Checkbox } from 'semantic-ui-react';
+import { Grid, Header, Image, Icon, Segment, Form, Message } from 'semantic-ui-react';
 import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { withTracker } from 'meteor/react-meteor-data';
 import { Meteor } from 'meteor/meteor';
 import { Accounts } from 'meteor/accounts-base';
 
+
 class LandingOne extends React.Component {
-  /** Initialize state fields. */
-  constructor(props) {
-    super(props);
-    this.state = { email: '', password: '', error: '', signed: false };
-    // Ensure that 'this' is bound to this component in these two functions.
-    // https://medium.freecodecamp.org/react-binding-patterns-5-approaches-for-handling-this-92c651b5af56
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleChange = this.handleChange.bind(this);
-  }
+    /** Initialize state fields. */
+    constructor(props) {
+        super(props);
+        this.state = { email: '', password: '', error: '', signed: false };
+        // Ensure that 'this' is bound to this component in these two functions.
+        // https://medium.freecodecamp.org/react-binding-patterns-5-approaches-for-handling-this-92c651b5af56
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+    }
 
-  /** Update the form controls each time the user interacts with them. */
-  handleChange(e, { name, value }) {
-    this.setState({ [name]: value });
-  }
-
-  /** Handle Signup submission using Meteor's account mechanism. */
-  handleSubmit() {
-    const { email, password } = this.state;
-    Accounts.createUser({ email, username: email, password }, (err) => {
-      if (err) {
-        this.setState({ error: err.reason });
-      } else {
-        this.setState({ signed: true });
-      }
-    });
-  }
-
+    /** Update the form controls each time the user interacts with them. */
+    handleChange(e, { name, value }) {
+        this.setState({ [name]: value });
+    }
+  
+    /** Handle Signup submission using Meteor's account mechanism. */
+    handleSubmit() {
+        const { email, password } = this.state;
+        Accounts.createUser({ email, username: email, password }, (err) => {
+            if (err) {
+                this.setState({ error: err.reason });
+                } else {
+                this.setState({ signed: true });
+                this.props.history.push('/addprofile');
+            }
+        });
+    }
   render() {
     // if correct authentication, redirect to page instead of login screen
     return (
@@ -126,17 +127,18 @@ class LandingOne extends React.Component {
         </div>
   );
 }
+
 }
 
 /** Declare the types of all properties. */
 LandingOne.propTypes = {
-  currentUser: PropTypes.string,
+    currentUser: PropTypes.string,
 
 };
 
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
 const LandingOneContainer = withTracker(() => ({
-  currentUser: Meteor.user() ? Meteor.user().username : '',
+    currentUser: Meteor.user() ? Meteor.user().username : '',
 }))(LandingOne);
 
 /** Enable ReactRouter for this component. https://reacttraining.com/react-router/web/api/withRouter */
