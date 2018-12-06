@@ -29,6 +29,7 @@ class AddClub extends React.Component {
     } else {
       Bert.alert({ type: 'success', message: 'Add succeeded' });
       this.formRef.reset();
+      this.props.history.push('/list');
     }
   }
 
