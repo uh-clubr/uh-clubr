@@ -100,6 +100,9 @@ class LandingOne extends React.Component {
                                 onChange={this.handleChange}
                             />
                             <Form.Button content="Submit"/>
+                            <Form.Field>
+                              <Checkbox label='Email me when new clubs get added' />
+                            </Form.Field>
                           </Segment>
                         </Form>
                         {this.state.error === '' ? (
