@@ -72,8 +72,7 @@ class ListClubs extends React.Component {
           <div className='list-clubs'>
             <Container>
               <Header as="h1" textAlign="center" className='header-style'>Club Directory</Header>
-              <Header as="h1" className='list-clubs-header'>Filters</Header>
-              <Dropdown selection defaultValue={'none'} onChange={(event, data) => this.handleChange(event, data)} options={this.ClubTypes} className='list-clubs-dropdown'/>
+              <Header as="h1" className='list-clubs-header'>Filters <Dropdown selection defaultValue={'none'} onChange={(event, data) => this.handleChange(event, data)} options={this.ClubTypes} className='list-clubs-dropdown'/></Header>
               <Card.Group centered>
                 {clubs.map((club, index) => <Club key={index} club={club}/>)}
               </Card.Group>
